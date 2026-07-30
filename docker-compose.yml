@@ -1,0 +1,62 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    container_name: club_db
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    networks:
+      - club_network
+
+
+  odoo:
+    build: .
+
+    container_name: club_odoo
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    restart: unless-stopped
+
+    ports:
+      - "8069:8069"
+
+    volumes:
+      - ./addons:/mnt/extra-addons
+      - ./config:/etc/odoo
+      - ./filestore:/var/lib/odoo
+      - ./logs:/var/log/odoo
+
+    environment:
+      HOST: db
+      USER: odoo
+      PASSWORD: odoo
+
+    command:
+      - odoo
+      - --config=/etc/odoo/odoo.conf
+
+    networks:
+      - club_network
+
+
+networks:
+  club_network:
+    driver: bridge
