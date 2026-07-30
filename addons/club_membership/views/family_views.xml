@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_club_family_member_list" model="ir.ui.view">
+        ...
+    </record>
+
+    <record id="view_club_family_member_form" model="ir.ui.view">
+        ...
+    </record>
+
+    <record id="view_club_family_member_kanban" model="ir.ui.view">
+        <field name="arch" type="xml">
+            <kanban>
+
+                <field name="name"/>
+                <field name="relation"/>
+                <field name="phone"/>
+                <field name="member_id"/>
+
+                <templates>
+                    <t t-name="kanban-box">
+
+                        ...
+
+                    </t>
+                </templates>
+
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_club_family_member_search" model="ir.ui.view">
+        ...
+    </record>
+
+    <record id="action_club_family_member" model="ir.actions.act_window">
+        ...
+    </record>
+
+</odoo>

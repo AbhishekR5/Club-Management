@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- ========================================================= -->
+    <!-- Member Search View -->
+    <!-- ========================================================= -->
+
+    <record id="view_club_member_search" model="ir.ui.view">
+        <field name="name">club.member.search</field>
+        <field name="model">club.member</field>
+        <field name="arch" type="xml">
+            <search string="Members">
+
+                <!-- Search Fields -->
+                <field name="member_id"/>
+                <field name="name"/>
+                <field name="mobile"/>
+                <field name="email"/>
+                <field name="membership_tier_id"/>
+                <field name="status"/>
+
+                <!-- Quick Filters -->
+                <separator/>
+
+                <filter
+                    name="filter_active"
+                    string="Active"
+                    domain="[('status', '=', 'active')]"/>
+
+                <filter
+                    name="filter_pending"
+                    string="Pending"
+                    domain="[('status', '=', 'pending')]"/>
+
+                <filter
+                    name="filter_expired"
+                    string="Expired"
+                    domain="[('status', '=', 'expired')]"/>
+
+                <filter
+                    name="filter_cancelled"
+                    string="Cancelled"
+                    domain="[('status', '=', 'cancelled')]"/>
+
+                <separator/>
+
+                <!-- Membership Tier -->
+                <filter
+                    name="filter_gold"
+                    string="Gold"
+                    domain="[('membership_tier_id.name', '=', 'Gold')]"/>
+
+                <filter
+                    name="filter_platinum"
+                    string="Platinum"
+                    domain="[('membership_tier_id.name', '=', 'Platinum')]"/>
+
+                <!-- Group By -->
+                <group expand="0" string="Group By">
+
+                    <filter
+                        name="group_tier"
+                        string="Membership Tier"
+                        context="{'group_by': 'membership_tier_id'}"/>
+
+                    <filter
+                        name="group_status"
+                        string="Status"
+                        context="{'group_by': 'status'}"/>
+
+                    <filter
+                        name="group_joining_month"
+                        string="Joining Month"
+                        context="{'group_by': 'joining_date:month'}"/>
+
+                </group>
+
+            </search>
+        </field>
+    </record>
+
+</odoo>

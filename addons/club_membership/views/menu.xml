@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- ========================================================= -->
+    <!-- Root Menu -->
+    <!-- ========================================================= -->
+
+    <menuitem
+        id="menu_club_root"
+        name="Club Management"
+        sequence="10"
+        web_icon="club_membership,static/description/icon.png"/>
+
+    <!-- ========================================================= -->
+    <!-- Members -->
+    <!-- ========================================================= -->
+
+    <menuitem
+        id="menu_club_members"
+        name="Members"
+        parent="menu_club_root"
+        action="action_club_member"
+        sequence="10"/>
+
+    <!-- ========================================================= -->
+    <!-- Family Members -->
+    <!-- ========================================================= -->
+
+    <menuitem
+        id="menu_family_members"
+        name="Family Members"
+        parent="menu_club_root"
+        action="action_club_family_member"
+        sequence="20"/>
+
+    <!-- ========================================================= -->
+    <!-- Configuration -->
+    <!-- ========================================================= -->
+
+    <menuitem
+        id="menu_club_configuration"
+        name="Configuration"
+        parent="menu_club_root"
+        sequence="90"/>
+
+    <menuitem
+        id="menu_membership_tiers"
+        name="Membership Tiers"
+        parent="menu_club_configuration"
+        action="action_membership_tier"
+        sequence="10"/>
+
+</odoo>

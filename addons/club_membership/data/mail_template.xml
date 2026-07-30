@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <!-- Membership Created -->
+    <record id="mail_template_member_created" model="mail.template">
+        <field name="name">Club Membership - Welcome</field>
+        <field name="model_id" ref="model_club_member"/>
+        <field name="subject">Welcome to Samruddhi Avenue Club - ${object.member_id}</field>
+        <field name="email_from">{{ user.email_formatted }}</field>
+        <field name="email_to">${object.email}</field>
+        <field name="auto_delete" eval="True"/>
+        <field name="body_html" type="html">
+            <![CDATA[
+            <div>
+                <p>Dear <strong><t t-out="object.name"/></strong>,</p>
+
+                <p>
+                    Welcome to <strong>Samruddhi Avenue Club</strong>.
+                </p>
+
+                <table style="border-collapse:collapse;">
+                    <tr>
+                        <td><strong>Member ID</strong></td>
+                        <td><t t-out="object.member_id"/></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Membership Tier</strong></td>
+                        <td><t t-out="object.membership_tier_id.name"/></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Joining Date</strong></td>
+                        <td><t t-out="object.joining_date"/></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Expiry Date</strong></td>
+                        <td><t t-out="object.expiry_date"/></td>
+                    </tr>
+                </table>
+
+                <p>
+                    Thank you for joining.
+                </p>
+
+                <p>
+                    Regards,<br/>
+                    Samruddhi Avenue Club
+                </p>
+            </div>
+            ]]>
+        </field>
+    </record>
+
+    <!-- Membership Expiry -->
+    <record id="mail_template_member_expired" model="mail.template">
+        <field name="name">Club Membership - Expired</field>
+        <field name="model_id" ref="model_club_member"/>
+        <field name="subject">Membership Expired - ${object.member_id}</field>
+        <field name="email_from">{{ user.email_formatted }}</field>
+        <field name="email_to">${object.email}</field>
+        <field name="auto_delete" eval="True"/>
+        <field name="body_html" type="html">
+            <![CDATA[
+            <div>
+                <p>Dear <strong><t t-out="object.name"/></strong>,</p>
+
+                <p>
+                    Your membership has expired.
+                </p>
+
+                <p>
+                    <strong>Member ID:</strong>
+                    <t t-out="object.member_id"/>
+                </p>
+
+                <p>
+                    Please renew your membership to continue enjoying club facilities.
+                </p>
+
+                <p>
+                    Regards,<br/>
+                    Samruddhi Avenue Club
+                </p>
+            </div>
+            ]]>
+        </field>
+    </record>
+
+</odoo>
