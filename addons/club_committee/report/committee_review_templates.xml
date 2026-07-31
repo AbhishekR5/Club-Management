@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- ==========================================================
+         Committee Review Report Template
+    =========================================================== -->
+
+    <template id="report_committee_review">
+
+        <t t-call="web.html_container">
+
+            <t t-foreach="docs" t-as="o">
+
+                <t t-call="web.external_layout">
+
+                    <div class="page">
+
+                        <!-- =====================================
+                             Report Header
+                        ====================================== -->
+
+                        <div class="text-center mb-4">
+
+                            <h2>
+                                Committee Membership Review
+                            </h2>
+
+                            <h4>
+
+                                <span t-field="o.review_number"/>
+
+                            </h4>
+
+                        </div>
+
+                        <!-- =====================================
+                             Applicant Information
+                        ====================================== -->
+
+                        <h3>Applicant Information</h3>
+
+                        <table class="table table-sm table-bordered">
+
+                            <tbody>
+
+                                <tr>
+
+                                    <th width="25%">Applicant</th>
+
+                                    <td>
+                                        <span t-field="o.applicant_id"/>
+                                    </td>
+
+                                    <th width="25%">Status</th>
+
+                                    <td>
+                                        <span t-field="o.status"/>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <th>Email</th>
+
+                                    <td>
+
+                                        <span t-field="o.applicant_email"/>
+
+                                    </td>
+
+                                    <th>Mobile</th>
+
+                                    <td>
+
+                                        <span t-field="o.applicant_mobile"/>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+
+                        <!-- =====================================
+                             Committee Information
+                        ====================================== -->
+
+                        <h3>Committee</h3>
+
+                        <table class="table table-sm table-bordered">
+
+                            <tbody>
+
+                                <tr>
+
+                                    <th width="25%">Committee</th>
+
+                                    <td>
+
+                                        <span t-field="o.committee_id"/>
+
+                                    </td>
+
+                                    <th width="25%">Reviewer</th>
+
+                                    <td>
+
+                                        <span t-field="o.committee_member_id"/>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <th>Chairperson</th>
+
+                                    <td>
+
+                                        <span t-field="o.committee_chairperson_id"/>
+
+                                    </td>
+
+                                    <th>Secretary</th>
+
+                                    <td>
+
+                                        <span t-field="o.committee_secretary_id"/>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+
+                        <!-- =====================================
+                             Interview Details
+                        ====================================== -->
+
+                        <h3>Interview Details</h3>
+
+                        <table class="table table-sm table-bordered">
+
+                            <tbody>
+
+                                <tr>
+
+                                    <th width="25%">Interview Start</th>
+
+                                    <td>
+
+                                        <span t-field="o.interview_start"/>
+
+                                    </td>
+
+                                    <th width="25%">Interview End</th>
+
+                                    <td>
+
+                                        <span t-field="o.interview_end"/>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <th>Location</th>
+
+                                    <td>
+
+                                        <span t-field="o.interview_location"/>
+
+                                    </td>
+
+                                    <th>Meeting</th>
+
+                                    <td>
+
+                                        <span t-field="o.meeting_id"/>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+
+                        <!-- =====================================
+                             Review Result
+                        ====================================== -->
+
+                        <h3>Committee Decision</h3>
+
+                        <table class="table table-sm table-bordered">
+
+                            <tbody>
+
+                                <tr>
+
+                                    <th width="25%">Recommendation</th>
+
+                                    <td>
+
+                                        <span t-field="o.recommendation"/>
+
+                                    </td>
+
+                                    <th width="25%">Score</th>
+
+                                    <td>
+
+                                        <span t-field="o.score"/>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <th>Decision Date</th>
+
+                                    <td>
+
+                                        <span t-field="o.decision_date"/>
+
+                                    </td>
+
+                                    <th>Approved By</th>
+
+                                    <td>
+
+                                        <span t-field="o.approved_by_id"/>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+
+                        <!-- =====================================
+                             Committee Remarks
+                        ====================================== -->
+
+                        <h3>Committee Remarks</h3>
+
+                        <div class="border p-3">
+
+                            <span t-field="o.remarks"/>
+
+                        </div>
+
+
+                        <!-- =====================================
+                             Signatures
+                        ====================================== -->
+
+                        <br/><br/><br/>
+
+                        <table class="table table-borderless">
+
+                            <tr>
+
+                                <td width="33%" class="text-center">
+
+                                    _______________________
+
+                                    <br/>
+
+                                    Reviewer
+
+                                </td>
+
+                                <td width="33%" class="text-center">
+
+                                    _______________________
+
+                                    <br/>
+
+                                    Chairperson
+
+                                </td>
+
+                                <td width="33%" class="text-center">
+
+                                    _______________________
+
+                                    <br/>
+
+                                    Secretary
+
+                                </td>
+
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                </t>
+
+            </t>
+
+        </t>
+
+    </template>
+
+</odoo>

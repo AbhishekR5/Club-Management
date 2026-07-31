@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- ==========================================================
+         Pending Membership Reviews Report
+    =========================================================== -->
+
+    <record id="action_report_pending_review"
+            model="ir.actions.report">
+
+        <field name="name">
+            Pending Membership Reviews
+        </field>
+
+        <field name="model">
+            club.review
+        </field>
+
+        <field name="report_type">
+            qweb-pdf
+        </field>
+
+        <field name="report_name">
+            club_committee.report_pending_review
+        </field>
+
+        <field name="report_file">
+            club_committee.report_pending_review
+        </field>
+
+        <field name="binding_model_id"
+               ref="model_club_review"/>
+
+        <field name="binding_type">
+            report
+        </field>
+
+        <field name="print_report_name">
+
+            'Pending Membership Reviews'
+
+        </field>
+
+        <field name="paperformat_id"
+               ref="club_committee.paperformat_club_committee"/>
+
+    </record>
+
+</odoo>

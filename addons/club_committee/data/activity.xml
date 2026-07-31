@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+
+    <!-- ==========================================================
+         Schedule Interview
+    =========================================================== -->
+
+    <record id="mail_activity_schedule_interview"
+            model="mail.activity.type">
+
+        <field name="name">
+            Schedule Interview
+        </field>
+
+        <field name="category">
+            default
+        </field>
+
+        <field name="icon">
+            fa-calendar
+        </field>
+
+        <field name="delay_count">0</field>
+
+        <field name="delay_unit">days</field>
+
+        <field name="summary">
+            Schedule Applicant Interview
+        </field>
+
+    </record>
+
+
+    <!-- ==========================================================
+         Conduct Interview
+    =========================================================== -->
+
+    <record id="mail_activity_conduct_interview"
+            model="mail.activity.type">
+
+        <field name="name">
+            Conduct Interview
+        </field>
+
+        <field name="category">
+            meeting
+        </field>
+
+        <field name="icon">
+            fa-users
+        </field>
+
+        <field name="delay_count">0</field>
+
+        <field name="delay_unit">days</field>
+
+        <field name="summary">
+            Conduct Committee Interview
+        </field>
+
+    </record>
+
+
+    <!-- ==========================================================
+         Review Application
+    =========================================================== -->
+
+    <record id="mail_activity_review_application"
+            model="mail.activity.type">
+
+        <field name="name">
+            Review Membership Application
+        </field>
+
+        <field name="category">
+            upload_file
+        </field>
+
+        <field name="icon">
+            fa-check-circle
+        </field>
+
+        <field name="delay_count">1</field>
+
+        <field name="delay_unit">days</field>
+
+        <field name="summary">
+            Review Applicant
+        </field>
+
+    </record>
+
+
+    <!-- ==========================================================
+         Approve Membership
+    =========================================================== -->
+
+    <record id="mail_activity_approve_membership"
+            model="mail.activity.type">
+
+        <field name="name">
+            Approve Membership
+        </field>
+
+        <field name="category">
+            default
+        </field>
+
+        <field name="icon">
+            fa-thumbs-up
+        </field>
+
+        <field name="delay_count">0</field>
+
+        <field name="delay_unit">days</field>
+
+        <field name="summary">
+            Membership Approval
+        </field>
+
+    </record>
+
+</odoo>

@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_club_committee_user,club.committee.user,model_club_committee,group_committee_user,1,0,0,0
+access_club_committee_manager,club.committee.manager,model_club_committee,group_committee_manager,1,1,1,1
+
+access_club_committee_member_user,club.committee.member.user,model_club_committee_member,group_committee_user,1,0,0,0
+access_club_committee_member_manager,club.committee.member.manager,model_club_committee_member,group_committee_manager,1,1,1,1
+
+access_club_review_user,club.review.user,model_club_review,group_committee_user,1,1,1,0
+access_club_review_manager,club.review.manager,model_club_review,group_committee_manager,1,1,1,1
+
+access_club_committee_meeting_user,club.committee.meeting.user,model_club_committee_meeting,group_committee_user,1,1,1,0
+access_club_committee_meeting_manager,club.committee.meeting.manager,model_club_committee_meeting,group_committee_manager,1,1,1,1

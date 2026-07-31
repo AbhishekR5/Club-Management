@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- ==========================================================
+         Committee Meeting List View
+    =========================================================== -->
+
+    <record id="view_club_committee_meeting_list"
+            model="ir.ui.view">
+
+        <field name="name">club.committee.meeting.list</field>
+
+        <field name="model">club.committee.meeting</field>
+
+        <field name="arch" type="xml">
+
+            <list string="Committee Meetings"
+                  create="1"
+                  edit="1"
+                  delete="0"
+                  default_order="start_datetime desc">
+
+                <field name="meeting_number"/>
+
+                <field name="committee_id"/>
+
+                <field name="meeting_date"/>
+
+                <field name="start_datetime"/>
+
+                <field name="end_datetime"/>
+
+                <field name="location"/>
+
+                <field name="review_count"/>
+
+                <field name="member_count"/>
+
+                <field name="status"
+                       widget="badge"
+                       decoration-info="status == 'scheduled'"
+                       decoration-primary="status == 'in_progress'"
+                       decoration-success="status == 'completed'"
+                       decoration-danger="status == 'cancelled'"/>
+
+            </list>
+
+        </field>
+
+    </record>
+
+
+    <!-- ==========================================================
+         Committee Meeting Kanban View
+    =========================================================== -->
+
+    <record id="view_club_committee_meeting_kanban"
+            model="ir.ui.view">
+
+        <field name="name">club.committee.meeting.kanban</field>
+
+        <field name="model">club.committee.meeting</field>
+
+        <field name="arch" type="xml">
+
+            <kanban
+                default_group_by="status"
+                records_draggable="true"
+                class="o_kanban_small_column"
+                sample="1">
+
+                <field name="meeting_number"/>
+                <field name="committee_id"/>
+                <field name="meeting_date"/>
+                <field name="start_datetime"/>
+                <field name="end_datetime"/>
+                <field name="location"/>
+                <field name="status"/>
+                <field name="review_count"/>
+                <field name="member_count"/>
+                <field name="color"/>
+
+                <templates>
+
+                    <t t-name="card">
+
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click o_kanban_record_color_#{record.color.raw_value}">
+
+                            <!-- Header -->
+
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+
+                                <strong>
+
+                                    <field name="meeting_number"/>
+
+                                </strong>
+
+                                <field name="status"
+                                       widget="badge"/>
+
+                            </div>
+
+                            <!-- Committee -->
+
+                            <div class="mb-2">
+
+                                <strong>Committee</strong>
+
+                                <div>
+
+                                    <field name="committee_id"/>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Meeting Date -->
+
+                            <div class="mb-2">
+
+                                <strong>Date</strong>
+
+                                <div>
+
+                                    <field name="meeting_date"/>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Schedule -->
+
+                            <div class="mb-2">
+
+                                <strong>Schedule</strong>
+
+                                <div>
+
+                                    <field name="start_datetime"/>
+
+                                </div>
+
+                                <div>
+
+                                    <field name="end_datetime"/>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Location -->
+
+                            <div class="mb-2">
+
+                                <strong>Location</strong>
+
+                                <div>
+
+                                    <field name="location"/>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Statistics -->
+
+                            <div class="row mt-3">
+
+                                <div class="col-6 text-center">
+
+                                    <div class="fw-bold">
+
+                                        <field name="member_count"/>
+
+                                    </div>
+
+                                    <small>Members</small>
+
+                                </div>
+
+                                <div class="col-6 text-center">
+
+                                    <div class="fw-bold">
+
+                                        <field name="review_count"/>
+
+                                    </div>
+
+                                    <small>Reviews</small>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Footer -->
+
+                            <div class="mt-3 border-top pt-2">
+
+                                <small class="text-muted">
+
+                                    <field name="committee_id"/>
+
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </t>
+
+                </templates>
+
+            </kanban>
+
+        </field>
+
+    </record>
+        <!-- ==========================================================
+         Committee Meeting Form View
+    =========================================================== -->
+
+    <record id="view_club_committee_meeting_form"
+            model="ir.ui.view">
+
+        <field name="name">club.committee.meeting.form</field>
+
+        <field name="model">club.committee.meeting</field>
+
+        <field name="arch" type="xml">
+
+            <form string="Committee Meeting">
+
+                <!-- ==========================================
+                     Header
+                =========================================== -->
+
+                <header>
+
+                    <button
+                        name="action_schedule"
+                        type="object"
+                        string="Schedule"
+                        class="btn-primary"
+                        invisible="status != 'draft'"/>
+
+                    <button
+                        name="action_start"
+                        type="object"
+                        string="Start Meeting"
+                        class="btn-primary"
+                        invisible="status != 'scheduled'"/>
+
+                    <button
+                        name="action_complete"
+                        type="object"
+                        string="Complete"
+                        class="btn-success"
+                        invisible="status != 'in_progress'"/>
+
+                    <button
+                        name="action_cancel"
+                        type="object"
+                        string="Cancel"
+                        class="btn-danger"
+                        invisible="status in ('completed','cancelled')"/>
+
+                    <button
+                        name="action_reset_to_draft"
+                        type="object"
+                        string="Reset to Draft"
+                        invisible="status == 'draft'"/>
+
+                    <field
+                        name="status"
+                        widget="statusbar"
+                        statusbar_visible="draft,scheduled,in_progress,completed,cancelled"/>
+
+                </header>
+
+                <sheet>
+
+                    <!-- ======================================
+                         Smart Buttons
+                    ======================================= -->
+
+                    <div class="oe_button_box"
+                         name="button_box">
+
+                        <button
+                            name="action_view_committee"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-users">
+
+                            <field
+                                name="member_count"
+                                widget="statinfo"
+                                string="Members"/>
+
+                        </button>
+
+                        <button
+                            name="action_view_reviews"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-check-square-o">
+
+                            <field
+                                name="review_count"
+                                widget="statinfo"
+                                string="Reviews"/>
+
+                        </button>
+
+                        <button
+                            name="action_view_calendar_event"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-calendar">
+
+                            <span class="o_stat_text">
+                                Calendar
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                    <!-- ======================================
+                         Title
+                    ======================================= -->
+
+                    <div class="oe_title">
+
+                        <label for="meeting_number"/>
+
+                        <h1>
+
+                            <field
+                                name="meeting_number"
+                                readonly="1"/>
+
+                        </h1>
+
+                    </div>
+
+                    <!-- ======================================
+                         General Information
+                    ======================================= -->
+
+                    <group>
+
+                        <group>
+
+                            <field
+                                name="committee_id"
+                                required="1"/>
+
+                            <field
+                                name="meeting_date"/>
+
+                            <field
+                                name="location"/>
+
+                            <field
+                                name="calendar_event_id"
+                                readonly="1"/>
+
+                        </group>
+
+                        <group>
+
+                            <field
+                                name="chairperson_id"
+                                readonly="1"/>
+
+                            <field
+                                name="secretary_id"
+                                readonly="1"/>
+
+                            <field
+                                name="member_count"
+                                readonly="1"/>
+
+                            <field
+                                name="review_count"
+                                readonly="1"/>
+
+                        </group>
+
+                    </group>
+
+                    <!-- ======================================
+                         Notebook
+                    ======================================= -->
+
+                    <notebook>
+
+                        <!-- ==================================
+                             General
+                        =================================== -->
+
+                        <page string="General">
+
+                            <group>
+
+                                <group>
+
+                                    <field
+                                        name="committee_id"
+                                        readonly="1"/>
+
+                                    <field
+                                        name="chairperson_id"
+                                        readonly="1"/>
+
+                                    <field
+                                        name="secretary_id"
+                                        readonly="1"/>
+
+                                </group>
+
+                                <group>
+
+                                    <field
+                                        name="status"
+                                        widget="badge"
+                                        readonly="1"/>
+
+                                    <field
+                                        name="meeting_number"
+                                        readonly="1"/>
+
+                                </group>
+
+                            </group>
+
+                            <group>
+
+                                <field
+                                    name="agenda"
+                                    nolabel="1"
+                                    placeholder="Enter meeting agenda..."/>
+
+                            </group>
+
+                        </page>
+
+                        <!-- ==================================
+                             Schedule
+                        =================================== -->
+
+                        <page string="Schedule">
+
+                            <group>
+
+                                <group>
+
+                                    <field
+                                        name="meeting_date"/>
+
+                                    <field
+                                        name="start_datetime"/>
+
+                                    <field
+                                        name="end_datetime"/>
+
+                                </group>
+
+                                <group>
+
+                                    <field
+                                        name="location"/>
+
+                                    <field
+                                        name="calendar_event_id"
+                                        readonly="1"/>
+
+                                </group>
+
+                            </group>
+
+                        </page>
+
+                                                <!-- ==================================
+                             Attendees
+                        =================================== -->
+
+                        <page string="Attendees">
+
+                            <field name="member_ids"
+                                   widget="many2many">
+
+                                <list editable="bottom">
+
+                                    <field name="partner_id"/>
+
+                                    <field name="role"/>
+
+                                    <field name="designation"/>
+
+                                    <field name="email"/>
+
+                                    <field name="mobile"/>
+
+                                </list>
+
+                            </field>
+
+                        </page>
+
+
+                        <!-- ==================================
+                             Membership Reviews
+                        =================================== -->
+
+                        <page string="Membership Reviews">
+
+                            <field name="review_ids"
+                                   context="{'default_meeting_id': id,
+                                             'default_committee_id': committee_id}">
+
+                                <list>
+
+                                    <field name="review_number"/>
+
+                                    <field name="applicant_id"/>
+
+                                    <field name="committee_member_id"/>
+
+                                    <field name="interview_start"/>
+
+                                    <field name="recommendation"/>
+
+                                    <field name="score"/>
+
+                                    <field name="status"
+                                           widget="badge"/>
+
+                                </list>
+
+                            </field>
+
+                        </page>
+
+
+                        <!-- ==================================
+                             Minutes
+                        =================================== -->
+
+                        <page string="Minutes">
+
+                            <group>
+
+                                <field
+                                    name="minutes"
+                                    nolabel="1"
+                                    placeholder="Record the proceedings, discussions, resolutions and action items of the committee meeting..."/>
+
+                            </group>
+
+                        </page>
+
+
+                        <!-- ==================================
+                             Internal Notes
+                        =================================== -->
+
+                        <page string="Internal Notes">
+
+                            <group>
+
+                                <field
+                                    name="note"
+                                    nolabel="1"
+                                    placeholder="Internal notes visible only to committee members..."/>
+
+                            </group>
+
+                        </page>
+
+                    </notebook>
+
+                </sheet>
+
+
+                <!-- ==========================================
+                     Chatter
+                =========================================== -->
+
+                <chatter>
+
+                    <field name="message_follower_ids"/>
+
+                    <field name="activity_ids"/>
+
+                    <field name="message_ids"/>
+
+                </chatter>
+
+            </form>
+
+        </field>
+
+    </record>
+        <!-- ==========================================================
+         Committee Meeting Calendar View
+    =========================================================== -->
+
+    <record id="view_club_committee_meeting_calendar"
+            model="ir.ui.view">
+
+        <field name="name">club.committee.meeting.calendar</field>
+
+        <field name="model">club.committee.meeting</field>
+
+        <field name="arch" type="xml">
+
+            <calendar
+                string="Committee Meetings"
+                date_start="start_datetime"
+                date_stop="end_datetime"
+                color="committee_id"
+                mode="month"
+                event_open_popup="false">
+
+                <field name="meeting_number"/>
+
+                <field name="committee_id"/>
+
+                <field name="meeting_date"/>
+
+                <field name="location"/>
+
+                <field name="status"/>
+
+                <field name="member_count"/>
+
+                <field name="review_count"/>
+
+            </calendar>
+
+        </field>
+
+    </record>
+
+
+    <!-- ==========================================================
+         Committee Meeting Search View
+    =========================================================== -->
+
+    <record id="view_club_committee_meeting_search"
+            model="ir.ui.view">
+
+        <field name="name">club.committee.meeting.search</field>
+
+        <field name="model">club.committee.meeting</field>
+
+        <field name="arch" type="xml">
+
+            <search string="Committee Meetings">
+
+                <!-- Search Fields -->
+
+                <field name="meeting_number"/>
+
+                <field name="committee_id"/>
+
+                <field name="meeting_date"/>
+
+                <field name="location"/>
+
+                <field name="status"/>
+
+                <separator/>
+
+                <!-- Status Filters -->
+
+                <filter
+                    name="draft"
+                    string="Draft"
+                    domain="[('status','=','draft')]"/>
+
+                <filter
+                    name="scheduled"
+                    string="Scheduled"
+                    domain="[('status','=','scheduled')]"/>
+
+                <filter
+                    name="progress"
+                    string="In Progress"
+                    domain="[('status','=','in_progress')]"/>
+
+                <filter
+                    name="completed"
+                    string="Completed"
+                    domain="[('status','=','completed')]"/>
+
+                <filter
+                    name="cancelled"
+                    string="Cancelled"
+                    domain="[('status','=','cancelled')]"/>
+
+                <separator/>
+
+                <!-- Date Filters -->
+
+                <filter
+                    name="today"
+                    string="Today's Meetings"
+                    domain="[
+                        ('meeting_date','=',context_today())
+                    ]"/>
+
+                <filter
+                    name="future"
+                    string="Upcoming"
+                    domain="[
+                        ('meeting_date','&gt;=',context_today())
+                    ]"/>
+
+                <separator/>
+
+                <!-- Group By -->
+
+                <group
+                    string="Group By"
+                    expand="0">
+
+                    <filter
+                        name="group_committee"
+                        string="Committee"
+                        context="{'group_by':'committee_id'}"/>
+
+                    <filter
+                        name="group_status"
+                        string="Status"
+                        context="{'group_by':'status'}"/>
+
+                    <filter
+                        name="group_date"
+                        string="Meeting Date"
+                        context="{'group_by':'meeting_date'}"/>
+
+                    <filter
+                        name="group_location"
+                        string="Location"
+                        context="{'group_by':'location'}"/>
+
+                </group>
+
+            </search>
+
+        </field>
+
+    </record>
+
+
+    <!-- ==========================================================
+         Window Action
+    =========================================================== -->
+
+    <record id="action_club_committee_meeting"
+            model="ir.actions.act_window">
+
+        <field name="name">
+            Committee Meetings
+        </field>
+
+        <field name="res_model">
+            club.committee.meeting
+        </field>
+
+        <field name="view_mode">
+            list,kanban,calendar,form
+        </field>
+
+        <field
+            name="search_view_id"
+            ref="view_club_committee_meeting_search"/>
+
+        <field name="context">
+            {
+                'search_default_future': 1
+            }
+        </field>
+
+        <field name="help"
+               type="html">
+
+            <p class="o_view_nocontent_smiling_face">
+                Schedule your first committee meeting.
+            </p>
+
+            <p>
+
+                Manage committee meetings, attendees,
+                membership reviews, agendas,
+                minutes, and committee decisions.
+
+            </p>
+
+        </field>
+
+    </record>
+
+</odoo>

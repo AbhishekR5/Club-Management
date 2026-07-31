@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- ==========================================================
+         Module Category
+    =========================================================== -->
+
+    <record id="module_category_club_committee"
+            model="ir.module.category">
+
+        <field name="name">Club Management</field>
+
+        <field name="description">
+            Committee and Membership Review Management
+        </field>
+
+        <field name="sequence">30</field>
+
+    </record>
+
+
+    <!-- ==========================================================
+         Security Groups
+    =========================================================== -->
+
+    <!-- Committee User -->
+
+    <record id="group_committee_user"
+            model="res.groups">
+
+        <field name="name">
+            Committee User
+        </field>
+
+        <field name="category_id"
+               ref="module_category_club_committee"/>
+
+        <field name="implied_ids"
+               eval="[(4, ref('base.group_user'))]"/>
+
+    </record>
+
+
+    <!-- Committee Manager -->
+
+    <record id="group_committee_manager"
+            model="res.groups">
+
+        <field name="name">
+            Committee Manager
+        </field>
+
+        <field name="category_id"
+               ref="module_category_club_committee"/>
+
+        <field name="implied_ids"
+               eval="[
+                    (4, ref('group_committee_user'))
+               ]"/>
+
+    </record>
+
+
+    <!-- ==========================================================
+         Record Rules
+    =========================================================== -->
+
+    <!--
+        Committee Users
+        Can only access meetings/reviews
+        belonging to committees where they are assigned.
+    -->
+
+    <record id="rule_committee_member_review"
+            model="ir.rule">
+
+        <field name="name">
+            Committee Review Access
+        </field>
+
+        <field name="model_id"
+               ref="model_club_review"/>
+
+        <field name="groups"
+               eval="[(4, ref('group_committee_user'))]"/>
+
+        <field name="domain_force">
+
+            [
+                ('committee_member_id.user_id', '=', user.id)
+            ]
+
+        </field>
+
+    </record>
+
+
+    <record id="rule_committee_member_meeting"
+            model="ir.rule">
+
+        <field name="name">
+            Committee Meeting Access
+        </field>
+
+        <field name="model_id"
+               ref="model_club_committee_meeting"/>
+
+        <field name="groups"
+               eval="[(4, ref('group_committee_user'))]"/>
+
+        <field name="domain_force">
+
+            [
+                ('member_ids.user_id', '=', user.id)
+            ]
+
+        </field>
+
+    </record>
+
+
+    <!--
+        Managers
+        Full access
+    -->
+
+    <record id="rule_committee_manager_review"
+            model="ir.rule">
+
+        <field name="name">
+            Committee Manager Review
+        </field>
+
+        <field name="model_id"
+               ref="model_club_review"/>
+
+        <field name="groups"
+               eval="[(4, ref('group_committee_manager'))]"/>
+
+        <field name="domain_force">
+
+            [(1,'=',1)]
+
+        </field>
+
+    </record>
+
+
+    <record id="rule_committee_manager_meeting"
+            model="ir.rule">
+
+        <field name="name">
+            Committee Manager Meeting
+        </field>
+
+        <field name="model_id"
+               ref="model_club_committee_meeting"/>
+
+        <field name="groups"
+               eval="[(4, ref('group_committee_manager'))]"/>
+
+        <field name="domain_force">
+
+            [(1,'=',1)]
+
+        </field>
+
+    </record>
+
+</odoo>

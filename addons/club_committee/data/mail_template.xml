@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- ==========================================================
+         Interview Scheduled
+    =========================================================== -->
+
+    <record id="mail_template_review_scheduled"
+            model="mail.template">
+
+        <field name="name">
+            Membership Interview Scheduled
+        </field>
+
+        <field name="model_id"
+               ref="model_club_review"/>
+
+        <field name="subject">
+Interview Scheduled - ${object.review_number}
+        </field>
+
+        <field name="email_to">
+${object.applicant_id.email}
+        </field>
+
+        <field name="auto_delete" eval="True"/>
+
+        <field name="body_html"
+               type="html">
+
+<![CDATA[
+<div>
+
+<p>Dear ${object.applicant_id.name},</p>
+
+<p>
+
+Your membership interview has been scheduled.
+
+</p>
+
+<ul>
+
+<li><b>Interview:</b> ${object.interview_start}</li>
+
+<li><b>Committee:</b> ${object.committee_id.name}</li>
+
+<li><b>Location:</b> ${object.interview_location}</li>
+
+</ul>
+
+<p>
+
+Regards,<br/>
+Club Committee
+
+</p>
+
+</div>
+]]>
+
+        </field>
+
+    </record>
+
+
+    <!-- ==========================================================
+         Membership Approved
+    =========================================================== -->
+
+    <record id="mail_template_review_approved"
+            model="mail.template">
+
+        <field name="name">
+            Membership Approved
+        </field>
+
+        <field name="model_id"
+               ref="model_club_review"/>
+
+        <field name="subject">
+Membership Approved
+        </field>
+
+        <field name="email_to">
+${object.applicant_id.email}
+        </field>
+
+        <field name="auto_delete"
+               eval="True"/>
+
+        <field name="body_html"
+               type="html">
+
+<![CDATA[
+<div>
+
+<p>
+
+Dear ${object.applicant_id.name},
+
+</p>
+
+<p>
+
+Congratulations!
+
+Your membership application has been approved.
+
+</p>
+
+<p>
+
+Membership Status:
+<b>${object.applicant_id.status}</b>
+
+</p>
+
+<p>
+
+Thank you.
+
+</p>
+
+</div>
+]]>
+
+        </field>
+
+    </record>
+
+
+    <!-- ==========================================================
+         Membership Rejected
+    =========================================================== -->
+
+    <record id="mail_template_review_rejected"
+            model="mail.template">
+
+        <field name="name">
+            Membership Rejected
+        </field>
+
+        <field name="model_id"
+               ref="model_club_review"/>
+
+        <field name="subject">
+Membership Application Update
+        </field>
+
+        <field name="email_to">
+${object.applicant_id.email}
+        </field>
+
+        <field name="auto_delete"
+               eval="True"/>
+
+        <field name="body_html"
+               type="html">
+
+<![CDATA[
+<div>
+
+<p>
+
+Dear ${object.applicant_id.name},
+
+</p>
+
+<p>
+
+Thank you for your interest in becoming a member.
+
+After careful review, we regret to inform you that your application was not approved.
+
+</p>
+
+<p>
+
+For further information, please contact the club office.
+
+</p>
+
+</div>
+]]>
+
+        </field>
+
+    </record>
+
+</odoo>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+
+    <!-- ==========================================================
+         Committee Sequence
+    =========================================================== -->
+
+    <record id="seq_club_committee"
+            model="ir.sequence">
+
+        <field name="name">Committee</field>
+
+        <field name="code">club.committee</field>
+
+        <field name="prefix">COM/%(year)s/</field>
+
+        <field name="padding">4</field>
+
+        <field name="number_increment">1</field>
+
+    </record>
+
+
+    <!-- ==========================================================
+         Meeting Sequence
+    =========================================================== -->
+
+    <record id="seq_club_committee_meeting"
+            model="ir.sequence">
+
+        <field name="name">Committee Meeting</field>
+
+        <field name="code">club.committee.meeting</field>
+
+        <field name="prefix">MTG/%(year)s/</field>
+
+        <field name="padding">5</field>
+
+        <field name="number_increment">1</field>
+
+    </record>
+
+
+    <!-- ==========================================================
+         Review Sequence
+    =========================================================== -->
+
+    <record id="seq_club_review"
+            model="ir.sequence">
+
+        <field name="name">Membership Review</field>
+
+        <field name="code">club.review</field>
+
+        <field name="prefix">REV/%(year)s/</field>
+
+        <field name="padding">5</field>
+
+        <field name="number_increment">1</field>
+
+    </record>
+
+</odoo>

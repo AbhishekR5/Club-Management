@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- ==========================================================
+         Pending Membership Reviews Report Template
+    =========================================================== -->
+
+    <template id="report_pending_review">
+
+        <t t-call="web.html_container">
+
+            <t t-call="web.external_layout">
+
+                <div class="page">
+
+                    <!-- =====================================
+                         Report Header
+                    ====================================== -->
+
+                    <div class="text-center mb-4">
+
+                        <h2>
+                            Pending Membership Reviews
+                        </h2>
+
+                        <p>
+
+                            Generated on
+                            <strong>
+                                <span t-out="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y %H:%M')"/>
+                            </strong>
+
+                        </p>
+
+                    </div>
+
+                    <!-- =====================================
+                         Pending Reviews Table
+                    ====================================== -->
+
+                    <table class="table table-sm table-bordered">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>#</th>
+
+                                <th>Review No.</th>
+
+                                <th>Applicant</th>
+
+                                <th>Committee</th>
+
+                                <th>Reviewer</th>
+
+                                <th>Interview</th>
+
+                                <th>Status</th>
+
+                                <th>Recommendation</th>
+
+                                <th>Score</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <t t-set="index" t-value="1"/>
+
+                            <t t-foreach="docs" t-as="o">
+
+                                <tr>
+
+                                    <td>
+
+                                        <span t-out="index"/>
+
+                                    </td>
+
+                                    <td>
+
+                                        <span t-field="o.review_number"/>
+
+                                    </td>
+
+                                    <td>
+
+                                        <span t-field="o.applicant_id"/>
+
+                                    </td>
+
+                                    <td>
+
+                                        <span t-field="o.committee_id"/>
+
+                                    </td>
+
+                                    <td>
+
+                                        <span t-field="o.committee_member_id"/>
+
+                                    </td>
+
+                                    <td>
+
+                                        <span t-field="o.interview_start"/>
+
+                                    </td>
+
+                                    <td>
+
+                                        <span t-field="o.status"/>
+
+                                    </td>
+
+                                    <td>
+
+                                        <span t-field="o.recommendation"/>
+
+                                    </td>
+
+                                    <td class="text-center">
+
+                                        <span t-field="o.score"/>
+
+                                    </td>
+
+                                </tr>
+
+                                <t t-set="index" t-value="index + 1"/>
+
+                            </t>
+
+                        </tbody>
+
+                    </table>
+
+                    <!-- =====================================
+                         Summary
+                    ====================================== -->
+
+                    <br/>
+
+                    <table class="table table-sm table-bordered"
+                           style="width:40%;">
+
+                        <tbody>
+
+                            <tr>
+
+                                <th>Total Pending Reviews</th>
+
+                                <td class="text-end">
+
+                                    <span t-out="len(docs)"/>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                    <!-- =====================================
+                         Footer
+                    ====================================== -->
+
+                    <br/><br/>
+
+                    <div class="text-end">
+
+                        <strong>
+
+                            Committee Manager
+
+                        </strong>
+
+                        <br/><br/><br/>
+
+                        ___________________________
+
+                    </div>
+
+                </div>
+
+            </t>
+
+        </t>
+
+    </template>
+
+</odoo>
