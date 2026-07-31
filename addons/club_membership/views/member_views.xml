@@ -33,25 +33,9 @@
         <field name="name">club.member.search</field>
         <field name="model">club.member</field>
         <field name="arch" type="xml">
-            <search>
-                <field name="member_id"/>
+            <search string="Members">
                 <field name="name"/>
-                <field name="mobile"/>
-                <field name="email"/>
-                <field name="membership_tier_id"/>
-
-                <filter name="active"
-                        string="Active"
-                        domain="[('status','=','active')]"/>
-
-                <group expand="0" string="Group By">
-                    <filter name="group_status"
-                            string="Status"
-                            context="{'group_by':'status'}"/>
-                    <filter name="group_tier"
-                            string="Membership Tier"
-                            context="{'group_by':'membership_tier_id'}"/>
-                </group>
+                <field name="active"/>
             </search>
         </field>
     </record>

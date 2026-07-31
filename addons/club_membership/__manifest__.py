@@ -28,17 +28,16 @@ Features
         "contacts",
     ],
     "data": [
-        "security/security.xml",
         "security/ir.model.access.csv",
 
-        "data/member_sequence.xml",
-        "data/cron.xml",
-        "data/mail_template.xml",
+        #"data/member_sequence.xml",
+        #"data/cron.xml",
+        #"data/mail_template.xml",
 
         "views/membership_tier_views.xml",
         "views/family_views.xml",
         "views/member_views.xml",
-        "views/search_views.xml",
+        #"views/search_views.xml",
         "views/menu.xml",
     ],
     "demo": [],

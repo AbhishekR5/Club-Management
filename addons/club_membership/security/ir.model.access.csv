@@ -1,7 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_club_member_user,club.member.user,model_club_member,club_membership.group_club_user,1,1,1,0
-access_club_member_manager,club.member.manager,model_club_member,club_membership.group_club_manager,1,1,1,1
-access_club_membership_tier_user,club.membership.tier.user,model_club_membership_tier,club_membership.group_club_user,1,1,1,0
-access_club_membership_tier_manager,club.membership.tier.manager,model_club_membership_tier,club_membership.group_club_manager,1,1,1,1
-access_club_family_member_user,club.family.member.user,model_club_family_member,club_membership.group_club_user,1,1,1,0
-access_club_family_member_manager,club.family.member.manager,model_club_family_member,club_membership.group_club_manager,1,1,1,1
+access_club_member,club.member,model_club_member,base.group_user,1,1,1,1
+access_club_membership_tier,club.membership.tier,model_club_membership_tier,base.group_user,1,1,1,1
+access_club_family_member,club.family.member,model_club_family_member,base.group_user,1,1,1,1

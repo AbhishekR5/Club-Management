@@ -1,41 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <data>
 
-    <record id="view_club_family_member_list" model="ir.ui.view">
-        ...
-    </record>
+        <!-- List View -->
+        <record id="view_club_family_member_list" model="ir.ui.view">
+            <field name="name">club.family.member.list</field>
+            <field name="model">club.family.member</field>
+            <field name="arch" type="xml">
+                <list string="Family Members">
+                    <field name="name"/>
+                    <field name="relation"/>
+                    <field name="date_of_birth"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="member_id"/>
+                    <field name="active"/>
+                </list>
+            </field>
+        </record>
 
-    <record id="view_club_family_member_form" model="ir.ui.view">
-        ...
-    </record>
+        <!-- Form View -->
+        <record id="view_club_family_member_form" model="ir.ui.view">
+            <field name="name">club.family.member.form</field>
+            <field name="model">club.family.member</field>
+            <field name="arch" type="xml">
+                <form string="Family Member">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="member_id"/>
+                                <field name="name"/>
+                                <field name="relation"/>
+                                <field name="date_of_birth"/>
+                            </group>
+                            <group>
+                                <field name="phone"/>
+                                <field name="email"/>
+                                <field name="active"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
 
-    <record id="view_club_family_member_kanban" model="ir.ui.view">
-        <field name="arch" type="xml">
-            <kanban>
+        <!-- Kanban View -->
+        <record id="view_club_family_member_kanban" model="ir.ui.view">
+            <field name="name">club.family.member.kanban</field>
+            <field name="model">club.family.member</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="name"/>
+                    <field name="relation"/>
+                    <field name="phone"/>
+                    <field name="member_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="fw-bold">
+                                    <field name="name"/>
+                                </div>
+                                <div>
+                                    <strong>Relation:</strong>
+                                    <field name="relation"/>
+                                </div>
+                                <div>
+                                    <strong>Phone:</strong>
+                                    <field name="phone"/>
+                                </div>
+                                <div>
+                                    <strong>Member:</strong>
+                                    <field name="member_id"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
 
-                <field name="name"/>
-                <field name="relation"/>
-                <field name="phone"/>
-                <field name="member_id"/>
+        <!-- Search View -->
+        <record id="view_club_family_member_search" model="ir.ui.view">
+            <field name="name">club.family.member.search</field>
+            <field name="model">club.family.member</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="member_id"/>
+                </search>
+            </field>
+        </record>
 
-                <templates>
-                    <t t-name="kanban-box">
+        <!-- Action -->
+        <record id="action_club_family_member" model="ir.actions.act_window">
+            <field name="name">Family Members</field>
+            <field name="res_model">club.family.member</field>
+            <field name="view_mode">list,form,kanban</field>
+            <field name="search_view_id" ref="view_club_family_member_search"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first family member.
+                </p>
+            </field>
+        </record>
 
-                        ...
-
-                    </t>
-                </templates>
-
-            </kanban>
-        </field>
-    </record>
-
-    <record id="view_club_family_member_search" model="ir.ui.view">
-        ...
-    </record>
-
-    <record id="action_club_family_member" model="ir.actions.act_window">
-        ...
-    </record>
-
+    </data>
 </odoo>
