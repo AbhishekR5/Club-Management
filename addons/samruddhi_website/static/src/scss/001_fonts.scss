@@ -1,0 +1,14 @@
+// ═══════════════════════════════════════════════════════════════════
+// Samruddhi Eco System — Font Loader
+// ═══════════════════════════════════════════════════════════════════
+//
+// Dedicated font import file — loaded FIRST in the asset pipeline
+// so all subsequent SCSS files can reference these font families.
+//
+// Inter  — Body text, UI elements (clean, highly legible)
+// Outfit — Display headings, hero text (modern geometric)
+//
+// Loaded via Google Fonts CDN with display=swap for performance.
+// ═══════════════════════════════════════════════════════════════════
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');

@@ -1,0 +1,252 @@
+// ═══════════════════════════════════════════════════════════════════
+// Samruddhi Eco System — Content Sections
+// ═══════════════════════════════════════════════════════════════════
+
+
+#wrapwrap .se-page {
+
+    // ── About Section ───────────────────────────────────────────
+
+    .se-about {
+        background: $se-bg-primary;
+    }
+
+    .se-about__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $se-space-8;
+
+        @media (max-width: $se-bp-lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: $se-bp-sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+    // ── Glass Cards ─────────────────────────────────────────────
+
+    .se-glass-card {
+        background: $se-glass-bg;
+        backdrop-filter: blur($se-blur-md);
+        -webkit-backdrop-filter: blur($se-blur-md);
+        border: 1px solid $se-glass-border;
+        border-radius: $se-radius-lg;
+        padding: $se-space-10;
+        transition:
+            background $se-duration-normal $se-ease-default,
+            border-color $se-duration-normal $se-ease-default,
+            transform $se-duration-normal $se-ease-default,
+            box-shadow $se-duration-normal $se-ease-default;
+
+        &:hover {
+            background: $se-glass-bg-hover;
+            border-color: $se-glass-border-hover;
+            transform: translateY(-4px);
+            box-shadow: $se-shadow-lg;
+        }
+    }
+
+    .se-glass-card__icon {
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba($se-accent-primary, 0.1);
+        border: 1px solid rgba($se-accent-primary, 0.2);
+        border-radius: $se-radius-md;
+        margin-bottom: $se-space-6;
+        color: $se-accent-primary;
+        font-size: $se-text-xl;
+    }
+
+    .se-glass-card__title {
+        font-size: $se-text-xl;
+        font-weight: $se-font-weight-semibold;
+        margin-bottom: $se-space-3;
+    }
+
+    .se-glass-card__text {
+        font-size: $se-text-base;
+        line-height: $se-line-height-relaxed;
+        color: $se-text-secondary;
+        margin: 0;
+    }
+
+
+    // ── Pillar Cards ────────────────────────────────────────────
+
+    .se-pillars {
+        background: $se-bg-secondary;
+    }
+
+    .se-pillars__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: $se-space-6;
+
+        @media (max-width: $se-bp-lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: $se-bp-sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .se-pillar-card {
+        position: relative;
+        padding: $se-space-10 $se-space-8;
+        border: 1px solid $se-border-subtle;
+        border-radius: $se-radius-lg;
+        background: $se-bg-primary;
+        transition:
+            border-color $se-duration-normal $se-ease-default,
+            box-shadow $se-duration-normal $se-ease-default;
+        overflow: hidden;
+
+        &:hover {
+            border-color: $se-glass-border;
+            box-shadow: $se-shadow-md;
+
+            .se-pillar-card__number {
+                color: $se-accent-primary;
+            }
+
+            .se-pillar-card__line {
+                transform: scaleX(1);
+            }
+        }
+    }
+
+    .se-pillar-card__number {
+        display: block;
+        font-family: $se-font-display;
+        font-size: $se-text-5xl;
+        font-weight: $se-font-weight-black;
+        color: $se-bg-tertiary;
+        line-height: 1;
+        margin-bottom: $se-space-6;
+        transition: color $se-duration-normal $se-ease-default;
+    }
+
+    .se-pillar-card__title {
+        font-size: $se-text-xl;
+        font-weight: $se-font-weight-semibold;
+        margin-bottom: $se-space-3;
+    }
+
+    .se-pillar-card__text {
+        font-size: $se-text-base;
+        color: $se-text-secondary;
+        line-height: $se-line-height-relaxed;
+        margin: 0;
+    }
+
+    .se-pillar-card__line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: $se-gradient-gold;
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform $se-duration-slow $se-ease-out;
+    }
+
+
+    // ── Stats Section ───────────────────────────────────────────
+
+    .se-stats {
+        background: $se-bg-primary;
+        border-top: 1px solid $se-border-subtle;
+        border-bottom: 1px solid $se-border-subtle;
+    }
+
+    .se-stats__grid {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: $se-space-8;
+
+        @media (max-width: $se-bp-md) {
+            gap: $se-space-6;
+        }
+    }
+
+    .se-stat {
+        text-align: center;
+        padding: $se-space-4 $se-space-8;
+
+        @media (max-width: $se-bp-md) {
+            padding: $se-space-4;
+            flex: 1 1 40%;
+        }
+    }
+
+    .se-stat__number {
+        display: block;
+        font-family: $se-font-display;
+        font-size: clamp(#{$se-text-4xl}, 5vw, #{$se-text-5xl});
+        font-weight: $se-font-weight-black;
+        background: $se-gradient-gold;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1;
+        margin-bottom: $se-space-2;
+    }
+
+    .se-stat__label {
+        display: block;
+        font-size: $se-text-sm;
+        font-weight: $se-font-weight-medium;
+        letter-spacing: $se-letter-spacing-wide;
+        text-transform: uppercase;
+        color: $se-text-secondary;
+    }
+
+    .se-stat__divider {
+        width: 1px;
+        height: 48px;
+        background: $se-border-subtle;
+
+        @media (max-width: $se-bp-md) {
+            display: none;
+        }
+    }
+
+
+    // ── CTA Section ─────────────────────────────────────────────
+
+    .se-cta {
+        background:
+            radial-gradient(
+                ellipse 70% 60% at 50% 50%,
+                rgba($se-accent-primary, 0.06) 0%,
+                transparent 70%
+            ),
+            $se-bg-secondary;
+    }
+
+    .se-cta__content {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .se-cta__title {
+        margin-bottom: $se-space-6;
+    }
+
+    .se-cta__text {
+        font-size: $se-text-lg;
+        color: $se-text-secondary;
+        margin-bottom: $se-space-10;
+    }
+}

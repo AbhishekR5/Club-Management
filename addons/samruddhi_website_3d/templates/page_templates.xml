@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         About Page
+         ════════════════════════════════════════════════════════════════ -->
+
+    <template id="page_about" name="Samruddhi 3D — About">
+        <t t-call="website.layout">
+            <t t-set="additional_title">About — Samruddhi Eco System</t>
+
+            <div id="sw3d-wrap" class="sw3d-page">
+                <section class="sw3d-section sw3d-page-header">
+                    <div class="sw3d-container">
+                        <h1>About Samruddhi</h1>
+                        <p>This page is under construction.</p>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+
+
+    <!-- ════════════════════════════════════════════════════════════════
+         Contact Page
+         ════════════════════════════════════════════════════════════════ -->
+
+    <template id="page_contact" name="Samruddhi 3D — Contact">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Contact — Samruddhi Eco System</t>
+
+            <div id="sw3d-wrap" class="sw3d-page">
+                <section class="sw3d-section sw3d-page-header">
+                    <div class="sw3d-container">
+                        <h1>Contact Us</h1>
+                        <p>This page is under construction.</p>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+
+</odoo>

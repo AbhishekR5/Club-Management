@@ -1,0 +1,16 @@
+/* Samruddhi Website 3D — Static Images Directory
+ *
+ * Place all module images here:
+ *   - hero backgrounds
+ *   - section backgrounds
+ *   - logos and branding
+ *   - icons and illustrations
+ *
+ * Reference from SCSS:
+ *   background-image: url('/samruddhi_website_3d/static/src/img/hero_bg.webp');
+ *
+ * Reference from QWeb:
+ *   <img t-att-src="'/samruddhi_website_3d/static/src/img/logo.svg'" alt="..."/>
+ *
+ * This .gitkeep file ensures the directory is tracked in version control.
+ */

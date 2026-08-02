@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         Samruddhi Eco System — Page Templates
+         ════════════════════════════════════════════════════════════════
+
+         Inner-page templates rendered by controllers.
+         Homepage is in homepage.xml (separate file).
+         Each page calls website.layout and receives page_class
+         from the controller for CSS scoping.
+         ════════════════════════════════════════════════════════════════ -->
+
+
+    <!-- ── About Page ────────────────────────────────────────────────── -->
+
+    <template id="page_about" name="Samruddhi Eco System — About">
+        <t t-call="website.layout">
+            <t t-set="additional_title">About — Samruddhi Eco System</t>
+
+            <main id="se-wrap" t-attf-class="se-page #{page_class}" role="main">
+                <section id="se-page-about" aria-labelledby="se-page-about-title">
+                    <div class="se-container">
+                        <header>
+                            <p>About Us</p>
+                            <h1 id="se-page-about-title">The Story Behind Samruddhi</h1>
+                            <p>
+                                This page is under construction. We are crafting
+                                an immersive story experience. Stay tuned.
+                            </p>
+                        </header>
+                    </div>
+                </section>
+            </main>
+        </t>
+    </template>
+
+
+    <!-- ── Ecosystem Page ────────────────────────────────────────────── -->
+
+    <template id="page_ecosystem" name="Samruddhi Eco System — Ecosystem">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Ecosystem — Samruddhi Eco System</t>
+
+            <main id="se-wrap" t-attf-class="se-page #{page_class}" role="main">
+                <section id="se-page-ecosystem" aria-labelledby="se-page-ecosystem-title">
+                    <div class="se-container">
+                        <header>
+                            <p>The Ecosystem</p>
+                            <h1 id="se-page-ecosystem-title">Four Pillars of Samruddhi</h1>
+                            <p>
+                                This page is under construction. We are building
+                                an interactive ecosystem explorer. Stay tuned.
+                            </p>
+                        </header>
+                    </div>
+                </section>
+            </main>
+        </t>
+    </template>
+
+
+    <!-- ── Membership Page ───────────────────────────────────────────── -->
+
+    <template id="page_membership" name="Samruddhi Eco System — Membership">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Membership — Samruddhi Eco System</t>
+
+            <main id="se-wrap" t-attf-class="se-page #{page_class}" role="main">
+                <section id="se-page-membership" aria-labelledby="se-page-membership-title">
+                    <div class="se-container">
+                        <header>
+                            <p>Membership</p>
+                            <h1 id="se-page-membership-title">Join the Samruddhi Family</h1>
+                            <p>
+                                This page is under construction. We are designing
+                                a premium membership experience. Stay tuned.
+                            </p>
+                        </header>
+                    </div>
+                </section>
+            </main>
+        </t>
+    </template>
+
+
+    <!-- ── Projects Page ─────────────────────────────────────────────── -->
+
+    <template id="page_projects" name="Samruddhi Eco System — Projects">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Projects — Samruddhi Eco System</t>
+
+            <main id="se-wrap" t-attf-class="se-page #{page_class}" role="main">
+                <section id="se-page-projects" aria-labelledby="se-page-projects-title">
+                    <div class="se-container">
+                        <header>
+                            <p>Our Projects</p>
+                            <h1 id="se-page-projects-title">Building the Future Together</h1>
+                            <p>
+                                This page is under construction. We are creating
+                                an immersive project showcase. Stay tuned.
+                            </p>
+                        </header>
+                    </div>
+                </section>
+            </main>
+        </t>
+    </template>
+
+
+    <!-- ── Contact Page ──────────────────────────────────────────────── -->
+
+    <template id="page_contact" name="Samruddhi Eco System — Contact">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Contact — Samruddhi Eco System</t>
+
+            <main id="se-wrap" t-attf-class="se-page #{page_class}" role="main">
+                <section id="se-page-contact" aria-labelledby="se-page-contact-title">
+                    <div class="se-container">
+                        <header>
+                            <p>Contact</p>
+                            <h1 id="se-page-contact-title">Let's Start a Conversation</h1>
+                            <p>
+                                This page is under construction. We are building
+                                a premium contact experience. Stay tuned.
+                            </p>
+                        </header>
+                    </div>
+                </section>
+            </main>
+        </t>
+    </template>
+
+</odoo>

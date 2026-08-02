@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         Homepage Template
+         ════════════════════════════════════════════════════════════════ -->
+
+    <template id="homepage" name="Samruddhi 3D — Home">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Samruddhi Eco System</t>
+
+            <div id="sw3d-wrap" class="sw3d-page">
+
+                <!-- Hero Section -->
+                <section id="sw3d-hero" class="sw3d-section sw3d-hero">
+                    <div class="sw3d-container">
+                        <h1 class="sw3d-hero__title">
+                            Samruddhi
+                            <span class="sw3d-hero__accent">Eco System</span>
+                        </h1>
+                        <p class="sw3d-hero__tagline">
+                            Building a thriving community where lifestyle meets legacy.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Content Section Placeholder -->
+                <section id="sw3d-content" class="sw3d-section sw3d-content">
+                    <div class="sw3d-container">
+                        <h2>Welcome</h2>
+                        <p>The Samruddhi 3D experience is being crafted.</p>
+                    </div>
+                </section>
+
+            </div>
+        </t>
+    </template>
+
+</odoo>

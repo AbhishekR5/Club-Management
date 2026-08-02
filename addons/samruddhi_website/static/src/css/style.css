@@ -1,0 +1,158 @@
+/* ═══════════════════════════════════════════════════════════════════
+ * Samruddhi Eco System — Core Styles
+ * ═══════════════════════════════════════════════════════════════════
+ *
+ * All styles scoped under #wrapwrap .se-page to prevent
+ * Odoo backend pollution.
+ *
+ * Consumes design tokens from variables.css (loaded first).
+ * No inline styles. No @import. No vendor prefixes (Odoo handles).
+ * ═══════════════════════════════════════════════════════════════════ */
+
+
+/* ── Reset ────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* ── Page Wrapper ─────────────────────────────────────────────────── */
+
+#wrapwrap .se-page {
+    background-color: var(--se-bg-primary);
+    color: var(--se-text-primary);
+    font-family: var(--se-font-primary);
+    font-size: var(--se-text-base);
+    line-height: var(--se-leading-normal);
+    font-weight: var(--se-weight-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+
+/* ── Selection ────────────────────────────────────────────────────── */
+
+#wrapwrap .se-page ::selection {
+    background-color: var(--se-accent-glow);
+    color: var(--se-text-primary);
+}
+
+
+/* ── Headings ─────────────────────────────────────────────────────── */
+
+#wrapwrap .se-page h1,
+#wrapwrap .se-page h2,
+#wrapwrap .se-page h3,
+#wrapwrap .se-page h4,
+#wrapwrap .se-page h5,
+#wrapwrap .se-page h6 {
+    font-family: var(--se-font-display);
+    font-weight: var(--se-weight-bold);
+    line-height: var(--se-leading-tight);
+    letter-spacing: var(--se-tracking-tight);
+    color: var(--se-text-primary);
+    margin: 0;
+}
+
+
+/* ── Body Text ────────────────────────────────────────────────────── */
+
+#wrapwrap .se-page p {
+    font-size: var(--se-text-lg);
+    line-height: var(--se-leading-relaxed);
+    color: var(--se-text-secondary);
+    margin: 0 0 var(--se-space-4);
+}
+
+
+/* ── Links ────────────────────────────────────────────────────────── */
+
+#wrapwrap .se-page a {
+    color: var(--se-accent-primary);
+    text-decoration: none;
+    transition: color var(--se-duration-fast) var(--se-ease-default);
+}
+
+#wrapwrap .se-page a:hover {
+    color: var(--se-accent-light);
+}
+
+#wrapwrap .se-page a:focus-visible {
+    outline: 2px solid var(--se-accent-primary);
+    outline-offset: 2px;
+    border-radius: var(--se-radius-sm);
+}
+
+
+/* ── Images ───────────────────────────────────────────────────────── */
+
+#wrapwrap .se-page img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* ── Container ────────────────────────────────────────────────────── */
+
+#wrapwrap .se-page .se-container {
+    width: 100%;
+    max-width: var(--se-container-max);
+    margin: 0 auto;
+    padding-left: var(--se-space-6);
+    padding-right: var(--se-space-6);
+}
+
+
+/* ── Sections ─────────────────────────────────────────────────────── */
+
+#wrapwrap .se-page section {
+    position: relative;
+    padding-top: var(--se-space-24);
+    padding-bottom: var(--se-space-24);
+}
+
+
+/* ── Scrollbar ────────────────────────────────────────────────────── */
+
+#wrapwrap .se-page {
+    scrollbar-width: thin;
+    scrollbar-color: var(--se-accent-secondary) var(--se-bg-secondary);
+}
+
+#wrapwrap .se-page::-webkit-scrollbar {
+    width: 8px;
+}
+
+#wrapwrap .se-page::-webkit-scrollbar-track {
+    background: var(--se-bg-secondary);
+}
+
+#wrapwrap .se-page::-webkit-scrollbar-thumb {
+    background: var(--se-accent-secondary);
+    border-radius: var(--se-radius-full);
+}
+
+#wrapwrap .se-page::-webkit-scrollbar-thumb:hover {
+    background: var(--se-accent-primary);
+}
+
+
+/* ── Utility: Visually Hidden ─────────────────────────────────────── */
+
+#wrapwrap .se-page .visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}

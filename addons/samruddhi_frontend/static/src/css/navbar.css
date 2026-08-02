@@ -1,0 +1,168 @@
+/* ═══════════════════════════════════════════════════════════════════
+ * Samruddhi Frontend — Navigation Styles
+ * ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Header Base (Sticky & Transparent) ────────────────────────── */
+#wrapwrap .sf-page .sf-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.4s var(--sf-ease-out), 
+                backdrop-filter 0.4s var(--sf-ease-out), 
+                border-bottom 0.4s var(--sf-ease-out);
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+}
+
+/* ── Glassmorphism State (Triggered on Scroll) ─────────────────── */
+#wrapwrap .sf-page .sf-header.is-scrolled {
+    background-color: rgba(17, 17, 17, 0.7); /* --sf-bg-secondary with opacity */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ── Container Layout ──────────────────────────────────────────── */
+#wrapwrap .sf-page .sf-header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    transition: padding 0.4s var(--sf-ease-out);
+}
+
+#wrapwrap .sf-page .sf-header.is-scrolled .sf-header__container {
+    padding: 1rem 2rem;
+}
+
+/* ── Brand / Logo ──────────────────────────────────────────────── */
+#wrapwrap .sf-page .sf-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--sf-text-primary);
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    z-index: 1001; /* Above mobile menu */
+}
+
+/* ── Desktop Navigation ────────────────────────────────────────── */
+#wrapwrap .sf-page .sf-nav__list {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#wrapwrap .sf-page .sf-nav__link {
+    position: relative;
+    color: var(--sf-text-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+}
+
+/* ── Animated Underline Hover Effect ───────────────────────────── */
+#wrapwrap .sf-page .sf-nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--sf-accent);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s var(--sf-ease-out);
+}
+
+#wrapwrap .sf-page .sf-nav__link:hover {
+    opacity: 1; /* Override base hover */
+    color: var(--sf-accent);
+}
+
+#wrapwrap .sf-page .sf-nav__link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* ── Mobile Hamburger Toggle ───────────────────────────────────── */
+#wrapwrap .sf-page .sf-nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+#wrapwrap .sf-page .sf-nav-toggle__line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--sf-text-primary);
+    transition: transform 0.3s var(--sf-ease-out), opacity 0.3s var(--sf-ease-out);
+    transform-origin: left center;
+}
+
+/* ── Responsive Overrides (Mobile Menu) ────────────────────────── */
+@media (max-width: 1023px) {
+    #wrapwrap .sf-page .sf-nav-toggle {
+        display: flex;
+    }
+
+    #wrapwrap .sf-page .sf-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--sf-bg-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+        transition: opacity 0.4s var(--sf-ease-out), visibility 0.4s;
+    }
+
+    #wrapwrap .sf-page .sf-nav.is-open {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+    }
+
+    #wrapwrap .sf-page .sf-nav__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    #wrapwrap .sf-page .sf-nav__link {
+        font-size: 1.5rem;
+    }
+
+    /* Hamburger Animation to 'X' */
+    #wrapwrap .sf-page .sf-nav-toggle.is-active .sf-nav-toggle__line:nth-child(1) {
+        transform: rotate(45deg);
+    }
+    #wrapwrap .sf-page .sf-nav-toggle.is-active .sf-nav-toggle__line:nth-child(2) {
+        opacity: 0;
+    }
+    #wrapwrap .sf-page .sf-nav-toggle.is-active .sf-nav-toggle__line:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+}

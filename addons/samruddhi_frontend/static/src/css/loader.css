@@ -1,0 +1,89 @@
+/* ═══════════════════════════════════════════════════════════════════
+ * Samruddhi Frontend — Loader Styles
+ * ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Fullscreen Overlay ────────────────────────────────────────── */
+#wrapwrap .sf-page .sf-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #050505;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+}
+
+/* ── Fade-out state ────────────────────────────────────────────── */
+#wrapwrap .sf-page .sf-loader.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* ── Centered Content ──────────────────────────────────────────── */
+#wrapwrap .sf-page .sf-loader__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* ── Brand / Logo ──────────────────────────────────────────────── */
+#wrapwrap .sf-page .sf-loader__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: var(--sf-text-primary);
+}
+
+#wrapwrap .sf-page .sf-loader__logo {
+    width: 48px;
+    height: 48px;
+    border: 2px solid #C9A227;
+    border-radius: 50%; /* Simple circle placeholder for logo */
+    box-shadow: 0 0 20px rgba(201, 162, 39, 0.2);
+}
+
+#wrapwrap .sf-page .sf-loader__text {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+/* ── Progress Bar ──────────────────────────────────────────────── */
+#wrapwrap .sf-page .sf-loader__progress-container {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+#wrapwrap .sf-page .sf-loader__progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: #C9A227;
+    transition: width 0.1s linear;
+}
+
+/* ── Percentage Readout ────────────────────────────────────────── */
+#wrapwrap .sf-page .sf-loader__percentage {
+    font-family: var(--sf-font-sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: #C9A227;
+}

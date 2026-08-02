@@ -1,0 +1,18 @@
+/* Samruddhi Eco System — Static Images Directory
+ *
+ * Place all module images here:
+ *   - hero_bg.webp        (hero section background)
+ *   - logo.svg            (brand logo)
+ *   - logo_white.svg      (light variant for dark backgrounds)
+ *   - og_image.jpg        (Open Graph social sharing)
+ *   - favicon.ico         (browser tab icon)
+ *   - icons/              (UI icons subdirectory)
+ *
+ * Reference from SCSS:
+ *   background-image: url('/samruddhi_website/static/src/img/hero_bg.webp');
+ *
+ * Reference from QWeb templates:
+ *   <img t-att-src="'/samruddhi_website/static/src/img/logo.svg'" alt="Samruddhi"/>
+ *
+ * This file ensures the directory is tracked in version control.
+ */

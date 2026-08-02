@@ -1,0 +1,90 @@
+// ═══════════════════════════════════════════════════════════════════
+// Samruddhi Eco System — Base Reset & Defaults
+// ═══════════════════════════════════════════════════════════════════
+
+// ── Box Sizing Reset ────────────────────────────────────────────
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+// ── Scoped under #wrapwrap to avoid Odoo backend pollution ──────
+
+#wrapwrap {
+
+    // ── Root-level overrides ────────────────────────────────────
+
+    &.se-page,
+    .se-page {
+        background-color: $se-bg-primary;
+        color: $se-text-primary;
+        font-family: $se-font-primary;
+        font-size: $se-text-base;
+        line-height: $se-line-height-normal;
+        font-weight: $se-font-weight-normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        overflow-x: hidden;
+    }
+
+    // ── Selection ───────────────────────────────────────────────
+
+    ::selection {
+        background-color: rgba($se-accent-primary, 0.3);
+        color: $se-text-primary;
+    }
+
+    // ── Links ───────────────────────────────────────────────────
+
+    .se-page a {
+        color: $se-accent-primary;
+        text-decoration: none;
+        transition: color $se-duration-fast $se-ease-default;
+
+        &:hover {
+            color: $se-accent-light;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $se-accent-primary;
+            outline-offset: 2px;
+            border-radius: $se-radius-sm;
+        }
+    }
+
+    // ── Images ──────────────────────────────────────────────────
+
+    .se-page img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    // ── Scrollbar (WebKit) ──────────────────────────────────────
+
+    .se-page {
+        scrollbar-width: thin;
+        scrollbar-color: $se-accent-secondary $se-bg-secondary;
+
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: $se-bg-secondary;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $se-accent-secondary;
+            border-radius: $se-radius-full;
+
+            &:hover {
+                background: $se-accent-primary;
+            }
+        }
+    }
+}

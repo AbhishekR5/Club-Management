@@ -1,0 +1,183 @@
+/* ═══════════════════════════════════════════════════════════════════
+ * Samruddhi Frontend — Premium Design System Tokens
+ * ═══════════════════════════════════════════════════════════════════
+ *
+ * Single source of truth for all UI design tokens.
+ * Awwwards / Apple / Tesla quality aesthetic.
+ * Naming convention: --sf-{category}-{property}
+ * ═══════════════════════════════════════════════════════════════════ */
+
+:root {
+
+    /* ── Luxury Color Palette ────────────────────────────────────── */
+
+    /* Backgrounds: Deep rich blacks to dark charcoal */
+    --sf-bg-primary:        #050505;
+    --sf-bg-secondary:      #0a0a0a;
+    --sf-bg-tertiary:       #111111;
+    --sf-bg-elevated:       #1a1a1a;
+
+    /* Accents: Cinematic Gold */
+    --sf-accent-primary:    #C9A227;
+    --sf-accent-secondary:  #A6821F;
+    --sf-accent-light:      #E5CA73;
+    --sf-accent-glow:       rgba(201, 162, 39, 0.25);
+
+    /* Typography */
+    --sf-text-primary:      #F5F5F7;
+    --sf-text-secondary:    #A1A1A6;
+    --sf-text-muted:        #6E6E73;
+    --sf-text-inverse:      #050505;
+
+    /* Status Colors (Subtle & Elegant) */
+    --sf-success:           #2E8B57;
+    --sf-warning:           #D4AF37;
+    --sf-error:             #8B0000;
+
+
+    /* ── Typography Scale ────────────────────────────────────────── */
+
+    /* Fonts */
+    --sf-font-sans:         -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", sans-serif;
+    --sf-font-serif:        "Playfair Display", "Georgia", serif;
+    --sf-font-mono:         "SF Mono", "JetBrains Mono", monospace;
+
+    /* Sizes (Fluid/Responsive scaling handled in responsive.css) */
+    --sf-text-xs:           0.75rem;     /* 12px */
+    --sf-text-sm:           0.875rem;    /* 14px */
+    --sf-text-base:         1rem;        /* 16px */
+    --sf-text-lg:           1.125rem;    /* 18px */
+    --sf-text-xl:           1.25rem;     /* 20px */
+    --sf-text-2xl:          1.5rem;      /* 24px */
+    --sf-text-3xl:          2rem;        /* 32px */
+    --sf-text-4xl:          3rem;        /* 48px */
+    --sf-text-5xl:          4.5rem;      /* 72px */
+    --sf-text-6xl:          6rem;        /* 96px */
+
+    /* Weights */
+    --sf-weight-light:      300;
+    --sf-weight-regular:    400;
+    --sf-weight-medium:     500;
+    --sf-weight-semibold:   600;
+    --sf-weight-bold:       700;
+
+    /* Line Heights */
+    --sf-leading-none:      1;
+    --sf-leading-tight:     1.1;
+    --sf-leading-snug:      1.3;
+    --sf-leading-normal:    1.5;
+    --sf-leading-relaxed:   1.75;
+
+    /* Letter Spacing */
+    --sf-tracking-tighter:  -0.04em;
+    --sf-tracking-tight:    -0.02em;
+    --sf-tracking-normal:   0em;
+    --sf-tracking-wide:     0.05em;
+    --sf-tracking-widest:   0.1em;
+
+
+    /* ── Spacing System ──────────────────────────────────────────── */
+
+    --sf-space-1:           0.25rem;     /* 4px */
+    --sf-space-2:           0.5rem;      /* 8px */
+    --sf-space-3:           0.75rem;     /* 12px */
+    --sf-space-4:           1rem;        /* 16px */
+    --sf-space-6:           1.5rem;      /* 24px */
+    --sf-space-8:           2rem;        /* 32px */
+    --sf-space-12:          3rem;        /* 48px */
+    --sf-space-16:          4rem;        /* 64px */
+    --sf-space-24:          6rem;        /* 96px */
+    --sf-space-32:          8rem;        /* 128px */
+    --sf-space-48:          12rem;       /* 192px */
+    --sf-space-64:          16rem;       /* 256px */
+
+
+    /* ── Border Radius ───────────────────────────────────────────── */
+
+    --sf-radius-sm:         4px;
+    --sf-radius-md:         8px;
+    --sf-radius-lg:         12px;
+    --sf-radius-xl:         24px;
+    --sf-radius-2xl:        32px;
+    --sf-radius-full:       9999px;
+
+
+    /* ── Container Sizes ─────────────────────────────────────────── */
+
+    --sf-container-sm:      640px;
+    --sf-container-md:      768px;
+    --sf-container-lg:      1024px;
+    --sf-container-xl:      1280px;
+    --sf-container-2xl:     1440px;
+    --sf-container-3xl:     1920px;
+    
+    /* Gutter */
+    --sf-container-padding: var(--sf-space-6);
+
+
+    /* ── Z-Index System ──────────────────────────────────────────── */
+
+    --sf-z-behind:          -1;
+    --sf-z-base:            0;
+    --sf-z-above:           10;
+    --sf-z-sticky:          100;
+    --sf-z-dropdown:        200;
+    --sf-z-navbar:          1000;
+    --sf-z-overlay:         2000;
+    --sf-z-modal:           3000;
+    --sf-z-toast:           4000;
+    --sf-z-loader:          9999;
+
+
+    /* ── Animation Durations & Easing ────────────────────────────── */
+
+    --sf-duration-fast:     150ms;
+    --sf-duration-normal:   300ms;
+    --sf-duration-slow:     500ms;
+    --sf-duration-slower:   800ms;
+    --sf-duration-epic:     1200ms;
+
+    /* Apple-like cubic-bezier easings */
+    --sf-ease-default:      cubic-bezier(0.25, 1, 0.5, 1);
+    --sf-ease-in:           cubic-bezier(0.42, 0, 1, 1);
+    --sf-ease-out:          cubic-bezier(0, 0, 0.58, 1);
+    --sf-ease-in-out:       cubic-bezier(0.42, 0, 0.58, 1);
+    --sf-ease-spring:       cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --sf-ease-cinematic:    cubic-bezier(0.16, 1, 0.3, 1);
+
+
+    /* ── Glassmorphism ───────────────────────────────────────────── */
+
+    --sf-glass-bg-subtle:   rgba(255, 255, 255, 0.02);
+    --sf-glass-bg-medium:   rgba(255, 255, 255, 0.05);
+    --sf-glass-bg-heavy:    rgba(255, 255, 255, 0.1);
+    
+    --sf-glass-border:      rgba(255, 255, 255, 0.08);
+    --sf-glass-border-gold: rgba(201, 162, 39, 0.15);
+
+    --sf-glass-blur-sm:     blur(8px);
+    --sf-glass-blur-md:     blur(16px);
+    --sf-glass-blur-lg:     blur(24px);
+
+
+    /* ── Shadows ─────────────────────────────────────────────────── */
+
+    --sf-shadow-sm:         0 1px 2px rgba(0, 0, 0, 0.5);
+    --sf-shadow-md:         0 4px 6px -1px rgba(0, 0, 0, 0.6), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+    --sf-shadow-lg:         0 10px 15px -3px rgba(0, 0, 0, 0.7), 0 4px 6px -2px rgba(0, 0, 0, 0.5);
+    --sf-shadow-xl:         0 20px 25px -5px rgba(0, 0, 0, 0.8), 0 10px 10px -5px rgba(0, 0, 0, 0.6);
+    --sf-shadow-gold:       0 10px 30px -5px var(--sf-accent-glow);
+    --sf-shadow-inner:      inset 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+
+    /* ── Responsive Breakpoints (Reference for media queries) ────── */
+    /* 
+       sm: 640px 
+       md: 768px 
+       lg: 1024px 
+       xl: 1280px 
+       2xl: 1440px 
+       3xl: 1920px 
+    */
+
+}

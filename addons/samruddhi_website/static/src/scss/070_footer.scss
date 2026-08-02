@@ -1,0 +1,164 @@
+// ═══════════════════════════════════════════════════════════════════
+// Samruddhi Eco System — Footer
+// ═══════════════════════════════════════════════════════════════════
+
+
+#wrapwrap .se-page {
+
+    // ── Override Odoo Default Footer ────────────────────────────
+
+    footer,
+    #footer {
+        background: $se-bg-secondary !important;
+        color: $se-text-secondary;
+        border-top: 1px solid $se-border-subtle;
+    }
+
+    .se-footer {
+        padding-top: $se-space-20;
+        padding-bottom: $se-space-8;
+    }
+
+
+    // ── Footer Grid ─────────────────────────────────────────────
+
+    .se-footer__grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: $se-space-12;
+        margin-bottom: $se-space-16;
+
+        @media (max-width: $se-bp-lg) {
+            grid-template-columns: 1fr 1fr;
+            gap: $se-space-8;
+        }
+
+        @media (max-width: $se-bp-sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+    // ── Footer Brand ────────────────────────────────────────────
+
+    .se-footer__brand {
+        max-width: 320px;
+    }
+
+    .se-footer__logo {
+        font-family: $se-font-display;
+        font-size: $se-text-2xl;
+        font-weight: $se-font-weight-bold;
+        color: $se-text-primary;
+        margin-bottom: $se-space-4;
+    }
+
+    .se-footer__desc {
+        font-size: $se-text-base;
+        line-height: $se-line-height-relaxed;
+        color: $se-text-secondary;
+        margin-bottom: $se-space-6;
+    }
+
+
+    // ── Footer Columns ──────────────────────────────────────────
+
+    .se-footer__heading {
+        font-family: $se-font-display;
+        font-size: $se-text-sm;
+        font-weight: $se-font-weight-semibold;
+        letter-spacing: $se-letter-spacing-widest;
+        text-transform: uppercase;
+        color: $se-accent-primary;
+        margin-bottom: $se-space-6;
+    }
+
+    .se-footer__links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin-bottom: $se-space-3;
+        }
+
+        a {
+            font-size: $se-text-base;
+            color: $se-text-secondary !important;
+            transition: color $se-duration-fast $se-ease-default;
+
+            &:hover {
+                color: $se-text-primary !important;
+            }
+        }
+    }
+
+
+    // ── Social Links ────────────────────────────────────────────
+
+    .se-footer__social {
+        display: flex;
+        gap: $se-space-3;
+        margin-top: $se-space-4;
+    }
+
+    .se-footer__social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid $se-border-subtle;
+        border-radius: $se-radius-full;
+        color: $se-text-secondary !important;
+        font-size: $se-text-base;
+        transition:
+            color $se-duration-fast $se-ease-default,
+            border-color $se-duration-fast $se-ease-default,
+            background $se-duration-fast $se-ease-default;
+
+        &:hover {
+            color: $se-accent-primary !important;
+            border-color: $se-glass-border;
+            background: $se-glass-bg;
+        }
+    }
+
+
+    // ── Footer Bottom Bar ───────────────────────────────────────
+
+    .se-footer__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: $se-space-8;
+        border-top: 1px solid $se-border-subtle;
+        flex-wrap: wrap;
+        gap: $se-space-4;
+
+        @media (max-width: $se-bp-md) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    .se-footer__copyright {
+        font-size: $se-text-sm;
+        color: $se-text-muted;
+        margin: 0;
+    }
+
+    .se-footer__bottom-links {
+        display: flex;
+        gap: $se-space-6;
+
+        a {
+            font-size: $se-text-sm;
+            color: $se-text-muted !important;
+
+            &:hover {
+                color: $se-text-secondary !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,107 @@
+// ═══════════════════════════════════════════════════════════════════
+// Samruddhi Eco System — Typography
+// ═══════════════════════════════════════════════════════════════════
+
+// NOTE: Fonts loaded via 001_fonts.scss (separate asset in pipeline)
+
+
+// ── Heading Styles ──────────────────────────────────────────────
+
+#wrapwrap .se-page {
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: $se-font-display;
+        font-weight: $se-font-weight-bold;
+        line-height: $se-line-height-tight;
+        letter-spacing: $se-letter-spacing-tight;
+        color: $se-text-primary;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: clamp(#{$se-text-4xl}, 6vw, #{$se-text-7xl});
+        font-weight: $se-font-weight-black;
+    }
+
+    h2 {
+        font-size: clamp(#{$se-text-3xl}, 4vw, #{$se-text-5xl});
+        font-weight: $se-font-weight-bold;
+    }
+
+    h3 {
+        font-size: clamp(#{$se-text-xl}, 2.5vw, #{$se-text-3xl});
+        font-weight: $se-font-weight-semibold;
+    }
+
+    h4 {
+        font-size: $se-text-xl;
+        font-weight: $se-font-weight-semibold;
+    }
+
+    h5 {
+        font-size: $se-text-lg;
+        font-weight: $se-font-weight-medium;
+    }
+
+    h6 {
+        font-size: $se-text-base;
+        font-weight: $se-font-weight-medium;
+        letter-spacing: $se-letter-spacing-wide;
+        text-transform: uppercase;
+    }
+
+
+    // ── Body Text ───────────────────────────────────────────────
+
+    p {
+        font-size: $se-text-lg;
+        line-height: $se-line-height-relaxed;
+        color: $se-text-secondary;
+        margin: 0 0 $se-space-4;
+    }
+
+    // ── Display Classes ─────────────────────────────────────────
+
+    .se-display-xl {
+        font-family: $se-font-display;
+        font-size: clamp(#{$se-text-5xl}, 8vw, #{$se-text-7xl});
+        font-weight: $se-font-weight-black;
+        line-height: 1;
+        letter-spacing: -0.03em;
+    }
+
+    .se-display-lg {
+        font-family: $se-font-display;
+        font-size: clamp(#{$se-text-4xl}, 5vw, #{$se-text-6xl});
+        font-weight: $se-font-weight-bold;
+        line-height: $se-line-height-tight;
+        letter-spacing: -0.02em;
+    }
+
+    // ── Label / Overline ────────────────────────────────────────
+
+    .se-label {
+        font-size: $se-text-sm;
+        font-weight: $se-font-weight-semibold;
+        letter-spacing: $se-letter-spacing-widest;
+        text-transform: uppercase;
+        color: $se-accent-primary;
+    }
+
+    // ── Gradient Text ───────────────────────────────────────────
+
+    .text-gradient {
+        background: $se-gradient-gold;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    // ── Lead Paragraph ──────────────────────────────────────────
+
+    .se-lead {
+        font-size: clamp(#{$se-text-lg}, 2vw, #{$se-text-xl});
+        line-height: $se-line-height-relaxed;
+        color: $se-text-secondary;
+    }
+}

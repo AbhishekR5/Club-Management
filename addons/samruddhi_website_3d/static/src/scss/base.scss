@@ -1,0 +1,50 @@
+// ═══════════════════════════════════════════════════════════════════
+// Samruddhi Website 3D — Base Styles
+// ═══════════════════════════════════════════════════════════════════
+
+// ── Scoped under #wrapwrap to avoid backend pollution ───────────
+// NOTE: Fonts are loaded via fonts.scss (separate asset in pipeline)
+
+#wrapwrap {
+
+    .sw3d-page {
+        background-color: $sw3d-bg-primary;
+        color: $sw3d-text-primary;
+        font-family: $sw3d-font-primary;
+        font-size: 1rem;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .sw3d-page h1,
+    .sw3d-page h2,
+    .sw3d-page h3,
+    .sw3d-page h4,
+    .sw3d-page h5,
+    .sw3d-page h6 {
+        font-family: $sw3d-font-display;
+        color: $sw3d-text-primary;
+        margin: 0;
+    }
+
+    .sw3d-page p {
+        color: $sw3d-text-secondary;
+        margin: 0 0 $sw3d-space-4;
+    }
+
+    .sw3d-page a {
+        color: $sw3d-accent-primary;
+        text-decoration: none;
+        transition: color $sw3d-duration-fast $sw3d-ease-default;
+
+        &:hover {
+            color: $sw3d-accent-light;
+        }
+    }
+
+    .sw3d-page ::selection {
+        background-color: rgba($sw3d-accent-primary, 0.3);
+        color: $sw3d-text-primary;
+    }
+}

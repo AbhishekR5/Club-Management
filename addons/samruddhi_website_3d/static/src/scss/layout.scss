@@ -1,0 +1,79 @@
+// ═══════════════════════════════════════════════════════════════════
+// Samruddhi Website 3D — Layout
+// ═══════════════════════════════════════════════════════════════════
+
+
+#wrapwrap .sw3d-page {
+
+    // ── Container ───────────────────────────────────────────────
+
+    .sw3d-container {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding-left: $sw3d-space-6;
+        padding-right: $sw3d-space-6;
+    }
+
+    // ── Sections ────────────────────────────────────────────────
+
+    .sw3d-section {
+        position: relative;
+        padding-top: $sw3d-space-24;
+        padding-bottom: $sw3d-space-24;
+
+        @media (max-width: $sw3d-bp-md) {
+            padding-top: $sw3d-space-16;
+            padding-bottom: $sw3d-space-16;
+        }
+    }
+
+    // ── Hero ────────────────────────────────────────────────────
+
+    .sw3d-hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .sw3d-hero__title {
+        font-size: clamp(2.5rem, 8vw, 6rem);
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.03em;
+    }
+
+    .sw3d-hero__accent {
+        display: block;
+        background: linear-gradient(135deg, $sw3d-accent-primary, $sw3d-accent-light);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .sw3d-hero__tagline {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: $sw3d-text-secondary;
+        max-width: 600px;
+        margin: $sw3d-space-8 auto 0;
+    }
+
+    // ── Page Header (stub pages) ────────────────────────────────
+
+    .sw3d-page-header {
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    // ── Content ─────────────────────────────────────────────────
+
+    .sw3d-content {
+        background: $sw3d-bg-secondary;
+        text-align: center;
+    }
+}

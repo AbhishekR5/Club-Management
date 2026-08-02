@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         Website Navigation Menu Items
+         ════════════════════════════════════════════════════════════════ -->
+
+    <record id="menu_home" model="website.menu">
+        <field name="name">Home</field>
+        <field name="url">/</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">10</field>
+        <field name="website_id">1</field>
+    </record>
+
+    <record id="menu_about" model="website.menu">
+        <field name="name">About</field>
+        <field name="url">/about</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">20</field>
+        <field name="website_id">1</field>
+    </record>
+
+    <record id="menu_ecosystem" model="website.menu">
+        <field name="name">Ecosystem</field>
+        <field name="url">/ecosystem</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">30</field>
+        <field name="website_id">1</field>
+    </record>
+
+    <record id="menu_membership" model="website.menu">
+        <field name="name">Membership</field>
+        <field name="url">/membership</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">40</field>
+        <field name="website_id">1</field>
+    </record>
+
+    <record id="menu_projects" model="website.menu">
+        <field name="name">Projects</field>
+        <field name="url">/projects</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">50</field>
+        <field name="website_id">1</field>
+    </record>
+
+    <record id="menu_contact" model="website.menu">
+        <field name="name">Contact</field>
+        <field name="url">/contact</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">60</field>
+        <field name="website_id">1</field>
+    </record>
+
+</odoo>

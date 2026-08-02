@@ -1,0 +1,189 @@
+// ═══════════════════════════════════════════════════════════════════
+// Samruddhi Eco System — Layout System
+// ═══════════════════════════════════════════════════════════════════
+
+
+#wrapwrap .se-page {
+
+    // ── Container ───────────────────────────────────────────────
+
+    .se-container {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding-left: $se-space-6;
+        padding-right: $se-space-6;
+
+        @media (min-width: $se-bp-xl) {
+            padding-left: $se-space-8;
+            padding-right: $se-space-8;
+        }
+    }
+
+    .se-container--narrow {
+        max-width: 960px;
+    }
+
+    .se-container--wide {
+        max-width: 1536px;
+    }
+
+    .se-container--full {
+        max-width: none;
+    }
+
+
+    // ── Section ─────────────────────────────────────────────────
+
+    .se-section {
+        position: relative;
+        padding-top: $se-space-24;
+        padding-bottom: $se-space-24;
+
+        @media (max-width: $se-bp-md) {
+            padding-top: $se-space-16;
+            padding-bottom: $se-space-16;
+        }
+    }
+
+    .se-section__header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto $se-space-16;
+
+        @media (max-width: $se-bp-md) {
+            margin-bottom: $se-space-10;
+        }
+    }
+
+    .se-section__label {
+        display: inline-block;
+        font-size: $se-text-sm;
+        font-weight: $se-font-weight-semibold;
+        letter-spacing: $se-letter-spacing-widest;
+        text-transform: uppercase;
+        color: $se-accent-primary;
+        margin-bottom: $se-space-4;
+        position: relative;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 1px;
+            background: $se-accent-primary;
+            vertical-align: middle;
+            margin-right: $se-space-3;
+        }
+
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 1px;
+            background: $se-accent-primary;
+            vertical-align: middle;
+            margin-left: $se-space-3;
+        }
+    }
+
+    .se-section__title {
+        margin-bottom: $se-space-6;
+    }
+
+    .se-section__subtitle {
+        font-size: $se-text-lg;
+        line-height: $se-line-height-relaxed;
+        color: $se-text-secondary;
+        max-width: 640px;
+        margin: 0 auto;
+    }
+
+
+    // ── Grid Utilities ──────────────────────────────────────────
+
+    .se-grid {
+        display: grid;
+        gap: $se-space-8;
+    }
+
+    .se-grid--2 {
+        grid-template-columns: repeat(2, 1fr);
+
+        @media (max-width: $se-bp-md) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .se-grid--3 {
+        grid-template-columns: repeat(3, 1fr);
+
+        @media (max-width: $se-bp-lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: $se-bp-sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .se-grid--4 {
+        grid-template-columns: repeat(4, 1fr);
+
+        @media (max-width: $se-bp-lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: $se-bp-sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+    // ── Flex Utilities ──────────────────────────────────────────
+
+    .se-flex {
+        display: flex;
+    }
+
+    .se-flex--center {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .se-flex--between {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .se-flex--col {
+        flex-direction: column;
+    }
+
+    .se-flex--wrap {
+        flex-wrap: wrap;
+    }
+
+    .se-flex--gap-sm {
+        gap: $se-space-4;
+    }
+
+    .se-flex--gap-md {
+        gap: $se-space-6;
+    }
+
+    .se-flex--gap-lg {
+        gap: $se-space-8;
+    }
+
+
+    // ── Page Header (for stub pages) ────────────────────────────
+
+    .se-page-header {
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $se-gradient-dark;
+    }
+}

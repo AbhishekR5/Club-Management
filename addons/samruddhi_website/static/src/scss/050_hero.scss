@@ -1,0 +1,205 @@
+// ═══════════════════════════════════════════════════════════════════
+// Samruddhi Eco System — Hero Section
+// ═══════════════════════════════════════════════════════════════════
+
+
+#wrapwrap .se-page {
+
+    // ── Hero Container ──────────────────────────────────────────
+
+    .se-hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: $se-bg-primary;
+    }
+
+    // ── Gradient Overlay ────────────────────────────────────────
+
+    .se-hero__overlay {
+        position: absolute;
+        inset: 0;
+        z-index: $se-z-base;
+        background:
+            // Top-left radial glow (gold)
+            radial-gradient(
+                ellipse 60% 50% at 15% 20%,
+                rgba($se-accent-primary, 0.08) 0%,
+                transparent 70%
+            ),
+            // Bottom-right subtle glow
+            radial-gradient(
+                ellipse 50% 60% at 85% 80%,
+                rgba($se-accent-secondary, 0.06) 0%,
+                transparent 70%
+            ),
+            // Center vignette
+            radial-gradient(
+                ellipse 80% 80% at 50% 50%,
+                transparent 30%,
+                rgba(0, 0, 0, 0.4) 100%
+            );
+    }
+
+    // ── Content ─────────────────────────────────────────────────
+
+    .se-hero__content {
+        position: relative;
+        z-index: $se-z-above;
+        text-align: center;
+        max-width: 900px;
+        padding: $se-space-6;
+    }
+
+    .se-hero__label {
+        font-size: $se-text-sm;
+        font-weight: $se-font-weight-semibold;
+        letter-spacing: $se-letter-spacing-widest;
+        text-transform: uppercase;
+        color: $se-accent-primary;
+        margin-bottom: $se-space-4;
+    }
+
+    .se-hero__title {
+        font-family: $se-font-display;
+        font-size: clamp(#{$se-text-5xl}, 8vw, #{$se-text-7xl});
+        font-weight: $se-font-weight-black;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: $se-text-primary;
+        margin-bottom: $se-space-8;
+
+        &--accent {
+            display: block;
+            background: $se-gradient-gold;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: $se-space-2;
+        }
+    }
+
+    .se-hero__tagline {
+        font-size: clamp(#{$se-text-base}, 2vw, #{$se-text-xl});
+        line-height: $se-line-height-relaxed;
+        color: $se-text-secondary;
+        max-width: 620px;
+        margin: 0 auto $se-space-12;
+    }
+
+    // ── CTA Buttons ─────────────────────────────────────────────
+
+    .se-hero__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $se-space-4;
+        justify-content: center;
+    }
+
+    // ── Scroll Indicator ────────────────────────────────────────
+
+    .se-hero__scroll-indicator {
+        position: absolute;
+        bottom: $se-space-10;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: $se-z-above;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $se-space-3;
+    }
+
+    .se-hero__scroll-text {
+        font-size: $se-text-xs;
+        font-weight: $se-font-weight-medium;
+        letter-spacing: $se-letter-spacing-widest;
+        text-transform: uppercase;
+        color: $se-text-muted;
+    }
+
+    .se-hero__scroll-line {
+        width: 1px;
+        height: 48px;
+        background: linear-gradient(
+            180deg,
+            $se-accent-primary 0%,
+            transparent 100%
+        );
+    }
+
+    // ── Responsive ──────────────────────────────────────────────
+
+    @media (max-width: $se-bp-md) {
+        .se-hero {
+            min-height: 90vh;
+        }
+
+        .se-hero__scroll-indicator {
+            bottom: $se-space-6;
+        }
+    }
+
+
+    // ── Buttons (defined here, used across the site) ────────────
+
+    .se-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: $se-space-2;
+        padding: $se-space-3 $se-space-8;
+        font-family: $se-font-primary;
+        font-size: $se-text-sm;
+        font-weight: $se-font-weight-semibold;
+        letter-spacing: $se-letter-spacing-wide;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: $se-radius-full;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition:
+            background $se-duration-fast $se-ease-default,
+            color $se-duration-fast $se-ease-default,
+            border-color $se-duration-fast $se-ease-default,
+            box-shadow $se-duration-fast $se-ease-default,
+            transform $se-duration-fast $se-ease-default;
+
+        &:active {
+            transform: scale(0.97);
+        }
+    }
+
+    .se-btn--primary {
+        background: $se-accent-primary;
+        color: $se-text-inverse;
+        border-color: $se-accent-primary;
+
+        &:hover {
+            background: $se-accent-light;
+            border-color: $se-accent-light;
+            color: $se-text-inverse !important;
+            box-shadow: $se-shadow-gold;
+        }
+    }
+
+    .se-btn--ghost {
+        background: transparent;
+        color: $se-text-primary;
+        border-color: $se-glass-border;
+
+        &:hover {
+            background: $se-glass-bg;
+            border-color: $se-glass-border-hover;
+            color: $se-text-primary !important;
+        }
+    }
+
+    .se-btn--lg {
+        padding: $se-space-4 $se-space-12;
+        font-size: $se-text-base;
+    }
+}

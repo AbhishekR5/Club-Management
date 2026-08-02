@@ -1,0 +1,137 @@
+// ═══════════════════════════════════════════════════════════════════
+// Samruddhi Eco System — Navbar
+// ═══════════════════════════════════════════════════════════════════
+//
+// Overrides the default Odoo website navbar to match the
+// cinematic dark + glass aesthetic. The navbar is transparent
+// at the top and gains a glass background on scroll via the
+// `.is-scrolled` class toggled by JavaScript.
+// ═══════════════════════════════════════════════════════════════════
+
+
+// ── Odoo Navbar Overrides ───────────────────────────────────────
+
+#wrapwrap .se-page {
+
+    // Target Odoo's default header/navbar
+    header,
+    .o_header_standard,
+    .navbar {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: $se-z-navbar;
+        background: transparent !important;
+        border-bottom: 1px solid transparent;
+        transition:
+            background $se-duration-normal $se-ease-default,
+            border-color $se-duration-normal $se-ease-default,
+            backdrop-filter $se-duration-normal $se-ease-default;
+    }
+
+    // ── Scrolled State ──────────────────────────────────────────
+
+    header.is-scrolled,
+    .o_header_standard.is-scrolled,
+    .navbar.is-scrolled {
+        background: rgba($se-bg-primary, 0.85) !important;
+        backdrop-filter: blur($se-blur-lg);
+        -webkit-backdrop-filter: blur($se-blur-lg);
+        border-bottom-color: $se-glass-border;
+    }
+
+    // ── Brand / Logo ────────────────────────────────────────────
+
+    .navbar-brand {
+        font-family: $se-font-display;
+        font-weight: $se-font-weight-bold;
+        font-size: $se-text-xl;
+        color: $se-text-primary !important;
+        letter-spacing: $se-letter-spacing-tight;
+        transition: color $se-duration-fast $se-ease-default;
+
+        &:hover {
+            color: $se-accent-primary !important;
+        }
+    }
+
+    // ── Nav Links ───────────────────────────────────────────────
+
+    .navbar-nav .nav-link {
+        font-family: $se-font-primary;
+        font-size: $se-text-sm;
+        font-weight: $se-font-weight-medium;
+        letter-spacing: $se-letter-spacing-wide;
+        text-transform: uppercase;
+        color: $se-text-secondary !important;
+        padding: $se-space-2 $se-space-4 !important;
+        position: relative;
+        transition: color $se-duration-fast $se-ease-default;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: $se-space-4;
+            right: $se-space-4;
+            height: 2px;
+            background: $se-accent-primary;
+            transform: scaleX(0);
+            transform-origin: right center;
+            transition: transform $se-duration-normal $se-ease-default;
+        }
+
+        &:hover,
+        &.active {
+            color: $se-text-primary !important;
+
+            &::after {
+                transform: scaleX(1);
+                transform-origin: left center;
+            }
+        }
+    }
+
+    // ── Mobile Toggle ───────────────────────────────────────────
+
+    .navbar-toggler {
+        border: 1px solid $se-glass-border;
+        padding: $se-space-2;
+        border-radius: $se-radius-sm;
+        transition: border-color $se-duration-fast $se-ease-default;
+
+        &:focus {
+            box-shadow: 0 0 0 2px $se-accent-glow;
+            outline: none;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+    }
+
+    // ── Mobile Menu ─────────────────────────────────────────────
+
+    @media (max-width: $se-bp-lg) {
+        .navbar-collapse {
+            background: rgba($se-bg-primary, 0.95);
+            backdrop-filter: blur($se-blur-xl);
+            -webkit-backdrop-filter: blur($se-blur-xl);
+            border-radius: 0 0 $se-radius-lg $se-radius-lg;
+            padding: $se-space-4 $se-space-6;
+            border: 1px solid $se-glass-border;
+            border-top: none;
+            margin-top: $se-space-2;
+        }
+
+        .navbar-nav .nav-link {
+            padding: $se-space-3 $se-space-4 !important;
+            font-size: $se-text-base;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+}

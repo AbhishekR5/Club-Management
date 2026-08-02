@@ -1,0 +1,168 @@
+/* ═══════════════════════════════════════════════════════════════════
+ * Samruddhi Eco System — CSS Custom Properties & Design Tokens
+ * ═══════════════════════════════════════════════════════════════════
+ *
+ * Single source of truth for all design tokens.
+ * Consumed by style.css, responsive.css, and JavaScript modules.
+ *
+ * Naming convention: --se-{category}-{property}
+ * ═══════════════════════════════════════════════════════════════════ */
+
+
+:root {
+
+    /* ── Color Palette ─────────────────────────────────────────── */
+
+    /* Backgrounds */
+    --se-bg-primary:        #0a0a0f;
+    --se-bg-secondary:      #12121a;
+    --se-bg-tertiary:       #1a1a26;
+    --se-bg-elevated:       #1e1e2c;
+
+    /* Accent — Gold */
+    --se-accent-primary:    #d4a853;
+    --se-accent-secondary:  #8b6914;
+    --se-accent-light:      #f0d48a;
+    --se-accent-glow:       rgba(212, 168, 83, 0.25);
+
+    /* Text */
+    --se-text-primary:      #f0ece4;
+    --se-text-secondary:    #9a958b;
+    --se-text-muted:        #5c5850;
+    --se-text-inverse:      #0a0a0f;
+
+    /* Glass & Borders */
+    --se-glass-bg:          rgba(255, 255, 255, 0.04);
+    --se-glass-bg-hover:    rgba(255, 255, 255, 0.07);
+    --se-glass-border:      rgba(212, 168, 83, 0.15);
+    --se-glass-border-hover: rgba(212, 168, 83, 0.30);
+    --se-border-subtle:     rgba(255, 255, 255, 0.06);
+
+    /* Status */
+    --se-success:           #4ade80;
+    --se-warning:           #fbbf24;
+    --se-error:             #f87171;
+
+
+    /* ── Typography ────────────────────────────────────────────── */
+
+    --se-font-primary:      'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --se-font-display:      'Outfit', 'Inter', sans-serif;
+    --se-font-mono:         'JetBrains Mono', 'Fira Code', monospace;
+
+    /* Scale */
+    --se-text-xs:           0.75rem;
+    --se-text-sm:           0.875rem;
+    --se-text-base:         1rem;
+    --se-text-lg:           1.125rem;
+    --se-text-xl:           1.25rem;
+    --se-text-2xl:          1.5rem;
+    --se-text-3xl:          2rem;
+    --se-text-4xl:          2.5rem;
+    --se-text-5xl:          3.5rem;
+    --se-text-6xl:          4.5rem;
+    --se-text-7xl:          6rem;
+
+    /* Weights */
+    --se-weight-light:      300;
+    --se-weight-normal:     400;
+    --se-weight-medium:     500;
+    --se-weight-semibold:   600;
+    --se-weight-bold:       700;
+    --se-weight-black:      900;
+
+    /* Line Heights */
+    --se-leading-tight:     1.1;
+    --se-leading-snug:      1.25;
+    --se-leading-normal:    1.5;
+    --se-leading-relaxed:   1.75;
+
+    /* Letter Spacing */
+    --se-tracking-tight:    -0.02em;
+    --se-tracking-normal:   0;
+    --se-tracking-wide:     0.05em;
+    --se-tracking-wider:    0.1em;
+    --se-tracking-widest:   0.2em;
+
+
+    /* ── Spacing Scale ─────────────────────────────────────────── */
+
+    --se-space-1:           0.25rem;
+    --se-space-2:           0.5rem;
+    --se-space-3:           0.75rem;
+    --se-space-4:           1rem;
+    --se-space-5:           1.25rem;
+    --se-space-6:           1.5rem;
+    --se-space-8:           2rem;
+    --se-space-10:          2.5rem;
+    --se-space-12:          3rem;
+    --se-space-16:          4rem;
+    --se-space-20:          5rem;
+    --se-space-24:          6rem;
+    --se-space-32:          8rem;
+
+
+    /* ── Border Radius ─────────────────────────────────────────── */
+
+    --se-radius-sm:         0.375rem;
+    --se-radius-md:         0.75rem;
+    --se-radius-lg:         1rem;
+    --se-radius-xl:         1.5rem;
+    --se-radius-2xl:        2rem;
+    --se-radius-full:       9999px;
+
+
+    /* ── Shadows ───────────────────────────────────────────────── */
+
+    --se-shadow-sm:         0 1px 2px rgba(0, 0, 0, 0.3);
+    --se-shadow-md:         0 4px 12px rgba(0, 0, 0, 0.4);
+    --se-shadow-lg:         0 8px 32px rgba(0, 0, 0, 0.5);
+    --se-shadow-xl:         0 16px 48px rgba(0, 0, 0, 0.6);
+    --se-shadow-glow:       0 0 40px var(--se-accent-glow);
+    --se-shadow-gold:       0 4px 20px rgba(212, 168, 83, 0.15);
+
+
+    /* ── Transitions ───────────────────────────────────────────── */
+
+    --se-duration-fast:     150ms;
+    --se-duration-normal:   300ms;
+    --se-duration-slow:     500ms;
+    --se-duration-slower:   800ms;
+
+    --se-ease-default:      cubic-bezier(0.4, 0, 0.2, 1);
+    --se-ease-in:           cubic-bezier(0.4, 0, 1, 1);
+    --se-ease-out:          cubic-bezier(0, 0, 0.2, 1);
+    --se-ease-in-out:       cubic-bezier(0.4, 0, 0.2, 1);
+    --se-ease-bounce:       cubic-bezier(0.34, 1.56, 0.64, 1);
+
+
+    /* ── Blur ──────────────────────────────────────────────────── */
+
+    --se-blur-sm:           8px;
+    --se-blur-md:           16px;
+    --se-blur-lg:           24px;
+    --se-blur-xl:           40px;
+
+
+    /* ── Z-Index ───────────────────────────────────────────────── */
+
+    --se-z-behind:          -1;
+    --se-z-base:            0;
+    --se-z-above:           1;
+    --se-z-sticky:          100;
+    --se-z-navbar:          1000;
+    --se-z-overlay:         2000;
+    --se-z-modal:           3000;
+    --se-z-toast:           4000;
+
+
+    /* ── Layout ────────────────────────────────────────────────── */
+
+    --se-container-max:     1280px;
+    --se-container-narrow:  960px;
+    --se-container-wide:    1536px;
+
+
+    /* ── Breakpoints (reference only — use in media queries) ──── */
+    /* sm: 480px | md: 768px | lg: 1024px | xl: 1280px | 2xl: 1536px */
+}

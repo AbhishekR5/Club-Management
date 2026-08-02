@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         Samruddhi Frontend — Homepage (Hero Section)
+         ════════════════════════════════════════════════════════════════
+         
+         Semantic HTML5 structure for a premium, cinematic Hero section.
+         Designed to be extended with CSS and future WebGL/Three.js.
+         ════════════════════════════════════════════════════════════════ -->
+
+    <template id="homepage" name="Samruddhi Frontend — Home">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Home</t>
+
+            <main id="sf-wrap" class="sf-page" role="main">
+
+                <!-- ── Accessibility: Skip to Content ──────────────────── -->
+                <a href="#hero" class="sf-skip-link">Skip to main content</a>
+
+                <!-- ── Luxury Loading Screen ───────────────────────────── -->
+                <div id="sf-loader" class="sf-loader" aria-live="polite" aria-busy="true">
+                    <div class="sf-loader__content">
+                        <!-- Logo Placeholder -->
+                        <div class="sf-loader__brand">
+                            <span class="sf-loader__logo"></span>
+                            <span class="sf-loader__text">Samruddhi</span>
+                        </div>
+                        
+                        <!-- Progress Tracking -->
+                        <div class="sf-loader__progress-container">
+                            <div class="sf-loader__progress-bar" id="sf-loader-bar"></div>
+                        </div>
+                        
+                        <!-- Percentage Readout -->
+                        <div class="sf-loader__percentage" id="sf-loader-percentage">0%</div>
+                    </div>
+                </div>
+
+                <!-- ── Premium Navigation Header ─────────────────────────── -->
+                <header id="sf-header" class="sf-header" role="banner">
+                    <div class="sf-header__container">
+                        
+                        <!-- Logo (Left) -->
+                        <a href="/" class="sf-brand" aria-label="Samruddhi Home">
+                            <span class="sf-brand__logo-placeholder"></span>
+                            <span class="sf-brand__text">Samruddhi</span>
+                        </a>
+
+                        <!-- Hamburger Toggle (Mobile) -->
+                        <button id="sf-nav-toggle" class="sf-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                            <span class="sf-nav-toggle__line"></span>
+                            <span class="sf-nav-toggle__line"></span>
+                            <span class="sf-nav-toggle__line"></span>
+                        </button>
+
+                        <!-- Navigation (Right) -->
+                        <nav id="sf-nav" class="sf-nav" aria-label="Main Navigation">
+                            <ul class="sf-nav__list">
+                                <li><a href="/" class="sf-nav__link">Home</a></li>
+                                <li><a href="#about" class="sf-nav__link">About</a></li>
+                                <li><a href="#ecosystem" class="sf-nav__link">Ecosystem</a></li>
+                                <li><a href="#projects" class="sf-nav__link">Projects</a></li>
+                                <li><a href="#membership" class="sf-nav__link">Membership</a></li>
+                                <li><a href="#contact" class="sf-nav__link">Contact</a></li>
+                            </ul>
+                        </nav>
+                        
+                    </div>
+                </header>
+
+                <!-- ── Cinematic Hero Section ────────────────────────── -->
+                <section id="hero" class="sf-hero" aria-label="Hero Banner">
+                    
+                    <!-- Background Canvas Placeholder (For future Three.js / Video) -->
+                    <div class="sf-hero__background" aria-hidden="true" id="hero-canvas-container">
+                        <!-- Canvas will be injected here by camera.js -->
+                    </div>
+
+                    <!-- Overlay for text legibility (Optional) -->
+                    <div class="sf-hero__overlay" aria-hidden="true"></div>
+
+                    <!-- Hero Content -->
+                    <div class="sf-hero__content">
+                        
+                        <!-- Large Headline -->
+                        <h1 class="sf-hero__title">
+                            Building Tomorrow's <br/>
+                            <span class="sf-hero__title-accent">Premium Lifestyle Ecosystem</span>
+                        </h1>
+
+                        <!-- Subtitle -->
+                        <p class="sf-hero__subtitle">
+                            An architectural masterpiece where nature, luxury, and technology 
+                            converge to redefine modern living.
+                        </p>
+
+                        <!-- CTA Button -->
+                        <div class="sf-hero__actions">
+                            <a href="#explore" class="sf-btn sf-btn--primary" role="button">
+                                Discover the Ecosystem
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                    <!-- Scroll Indicator -->
+                    <div class="sf-hero__scroll-indicator" aria-hidden="true">
+                        <span class="sf-scroll-text">Scroll to explore</span>
+                        <div class="sf-scroll-line"></div>
+                    </div>
+
+                </section>
+
+                <!-- ── About Section ─────────────────────────────────────────── -->
+                <section id="about" style="min-height: 100vh; display: flex; align-items: center;" aria-label="About Us">
+                    <div class="sf-container">
+                        <h2>About Samruddhi</h2>
+                        <p>Placeholder description for the About section. A legacy of excellence and community-driven luxury.</p>
+                    </div>
+                </section>
+
+                <!-- ── Ecosystem Section ─────────────────────────────────────── -->
+                <section id="ecosystem" style="min-height: 100vh; display: flex; align-items: center; background: var(--sf-bg-secondary);" aria-labelledby="ecosystem-title">
+                    <div class="sf-container sf-grid-split">
+                        <article>
+                            <h2 id="ecosystem-title">Our Ecosystem</h2>
+                            <p>Placeholder description for the Ecosystem section. The four pillars that define our lifestyle.</p>
+                        </article>
+                        <figure class="sf-lazy-image" aria-label="Ecosystem visualization placeholder"></figure>
+                    </div>
+                </section>
+
+                <!-- ── Business Hub Section ──────────────────────────────────── -->
+                <section id="business-hub" style="min-height: 100vh; display: flex; align-items: center;" aria-label="Business Hub">
+                    <div class="sf-container">
+                        <h2>Business Hub</h2>
+                        <p>Placeholder description for the Business Hub section. Fostering innovation and professional growth.</p>
+                    </div>
+                </section>
+
+                <!-- ── Sports Club Section ───────────────────────────────────── -->
+                <section id="sports-club" style="min-height: 100vh; display: flex; align-items: center; background: var(--sf-bg-secondary);" aria-label="Sports Club">
+                    <div class="sf-container">
+                        <h2>Sports Club</h2>
+                        <p>Placeholder description for the Sports Club section. State-of-the-art facilities for active living.</p>
+                    </div>
+                </section>
+
+                <!-- ── Hospitality Section ───────────────────────────────────── -->
+                <section id="hospitality" style="min-height: 100vh; display: flex; align-items: center;" aria-label="Hospitality">
+                    <div class="sf-container">
+                        <h2>Hospitality</h2>
+                        <p>Placeholder description for the Hospitality section. World-class dining and exclusive retreats.</p>
+                    </div>
+                </section>
+
+                <!-- ── Projects Section ──────────────────────────────────────── -->
+                <section id="projects" style="min-height: 100vh; display: flex; align-items: center; background: var(--sf-bg-secondary);" aria-label="Future Projects">
+                    <div class="sf-container">
+                        <h2>Our Projects</h2>
+                        <p>Placeholder description for the Projects section. Exploring the future developments of Samruddhi.</p>
+                    </div>
+                </section>
+
+                <!-- ── Testimonials Section ──────────────────────────────────── -->
+                <section id="testimonials" style="min-height: 100vh; display: flex; align-items: center;" aria-label="Testimonials">
+                    <div class="sf-container">
+                        <h2>Testimonials</h2>
+                        <p>Placeholder description for the Testimonials section. Stories from our esteemed members.</p>
+                    </div>
+                </section>
+
+                <!-- ── Membership Section ────────────────────────────────────── -->
+                <section id="membership" style="min-height: 100vh; display: flex; align-items: center; background: var(--sf-bg-secondary);" aria-label="Membership Tiers">
+                    <div class="sf-container">
+                        <h2>Membership</h2>
+                        <p>Placeholder description for the Membership section. Join the elite community.</p>
+                    </div>
+                </section>
+
+                <!-- ── Contact Section ───────────────────────────────────────── -->
+                <section id="contact" style="min-height: 100vh; display: flex; align-items: center;" aria-label="Contact Us">
+                    <div class="sf-container">
+                        <h2>Contact</h2>
+                        <p>Placeholder description for the Contact section. Get in touch to secure your legacy.</p>
+                    </div>
+                </section>
+
+            </main>
+        </t>
+    </template>
+
+</odoo>

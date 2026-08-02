@@ -1,0 +1,196 @@
+// ═══════════════════════════════════════════════════════════════════
+// Samruddhi Eco System — Design Tokens & Variables
+// ═══════════════════════════════════════════════════════════════════
+//
+// This file defines ALL design tokens used across the project.
+// No raw values should appear outside this file.
+// Every SCSS file imports these variables via Odoo's compilation order.
+//
+// NOTE: We use CSS custom properties (--se-*) so JavaScript and
+//       future Three.js shaders can also access the palette.
+// ═══════════════════════════════════════════════════════════════════
+
+
+// ── Color Palette (SCSS variables for compile-time use) ─────────
+
+// Backgrounds
+$se-bg-primary:       #0a0a0f !default;
+$se-bg-secondary:     #12121a !default;
+$se-bg-tertiary:      #1a1a26 !default;
+$se-bg-elevated:      #1e1e2c !default;
+
+// Accent — Rich Gold
+$se-accent-primary:   #d4a853 !default;
+$se-accent-secondary: #8b6914 !default;
+$se-accent-light:     #f0d48a !default;
+$se-accent-glow:      rgba(212, 168, 83, 0.25) !default;
+
+// Text
+$se-text-primary:     #f0ece4 !default;
+$se-text-secondary:   #9a958b !default;
+$se-text-muted:       #5c5850 !default;
+$se-text-inverse:     #0a0a0f !default;
+
+// Glass & Borders
+$se-glass-bg:         rgba(255, 255, 255, 0.04) !default;
+$se-glass-bg-hover:   rgba(255, 255, 255, 0.07) !default;
+$se-glass-border:     rgba(212, 168, 83, 0.15) !default;
+$se-glass-border-hover: rgba(212, 168, 83, 0.30) !default;
+$se-border-subtle:    rgba(255, 255, 255, 0.06) !default;
+
+// Gradients
+$se-gradient-gold:    linear-gradient(135deg, $se-accent-primary, $se-accent-light) !default;
+$se-gradient-dark:    linear-gradient(180deg, $se-bg-primary 0%, $se-bg-secondary 100%) !default;
+$se-gradient-hero:    linear-gradient(180deg, transparent 0%, $se-bg-primary 100%) !default;
+
+// Status (future use)
+$se-success:          #4ade80 !default;
+$se-warning:          #fbbf24 !default;
+$se-error:            #f87171 !default;
+
+
+// ── Typography ──────────────────────────────────────────────────
+
+$se-font-primary:     'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !default;
+$se-font-display:     'Outfit', 'Inter', sans-serif !default;
+$se-font-mono:        'JetBrains Mono', 'Fira Code', monospace !default;
+
+// Type scale (fluid-ish, using clamp in the typography file)
+$se-text-xs:          0.75rem !default;    // 12px
+$se-text-sm:          0.875rem !default;   // 14px
+$se-text-base:        1rem !default;       // 16px
+$se-text-lg:          1.125rem !default;   // 18px
+$se-text-xl:          1.25rem !default;    // 20px
+$se-text-2xl:         1.5rem !default;     // 24px
+$se-text-3xl:         2rem !default;       // 32px
+$se-text-4xl:         2.5rem !default;     // 40px
+$se-text-5xl:         3.5rem !default;     // 56px
+$se-text-6xl:         4.5rem !default;     // 72px
+$se-text-7xl:         6rem !default;       // 96px
+
+$se-line-height-tight:    1.1 !default;
+$se-line-height-snug:     1.25 !default;
+$se-line-height-normal:   1.5 !default;
+$se-line-height-relaxed:  1.75 !default;
+
+$se-font-weight-light:    300 !default;
+$se-font-weight-normal:   400 !default;
+$se-font-weight-medium:   500 !default;
+$se-font-weight-semibold: 600 !default;
+$se-font-weight-bold:     700 !default;
+$se-font-weight-black:    900 !default;
+
+$se-letter-spacing-tight:    -0.02em !default;
+$se-letter-spacing-normal:    0 !default;
+$se-letter-spacing-wide:      0.05em !default;
+$se-letter-spacing-wider:     0.1em !default;
+$se-letter-spacing-widest:    0.2em !default;
+
+
+// ── Spacing Scale ───────────────────────────────────────────────
+
+$se-space-1:   0.25rem !default;   // 4px
+$se-space-2:   0.5rem !default;    // 8px
+$se-space-3:   0.75rem !default;   // 12px
+$se-space-4:   1rem !default;      // 16px
+$se-space-5:   1.25rem !default;   // 20px
+$se-space-6:   1.5rem !default;    // 24px
+$se-space-8:   2rem !default;      // 32px
+$se-space-10:  2.5rem !default;    // 40px
+$se-space-12:  3rem !default;      // 48px
+$se-space-16:  4rem !default;      // 64px
+$se-space-20:  5rem !default;      // 80px
+$se-space-24:  6rem !default;      // 96px
+$se-space-32:  8rem !default;      // 128px
+
+
+// ── Border Radius ───────────────────────────────────────────────
+
+$se-radius-sm:     0.375rem !default;   // 6px
+$se-radius-md:     0.75rem !default;    // 12px
+$se-radius-lg:     1rem !default;       // 16px
+$se-radius-xl:     1.5rem !default;     // 24px
+$se-radius-2xl:    2rem !default;       // 32px
+$se-radius-full:   9999px !default;
+
+
+// ── Shadows ─────────────────────────────────────────────────────
+
+$se-shadow-sm:     0 1px 2px rgba(0, 0, 0, 0.3) !default;
+$se-shadow-md:     0 4px 12px rgba(0, 0, 0, 0.4) !default;
+$se-shadow-lg:     0 8px 32px rgba(0, 0, 0, 0.5) !default;
+$se-shadow-xl:     0 16px 48px rgba(0, 0, 0, 0.6) !default;
+$se-shadow-glow:   0 0 40px $se-accent-glow !default;
+$se-shadow-gold:   0 4px 20px rgba(212, 168, 83, 0.15) !default;
+
+
+// ── Breakpoints ─────────────────────────────────────────────────
+
+$se-bp-sm:   480px !default;
+$se-bp-md:   768px !default;
+$se-bp-lg:   1024px !default;
+$se-bp-xl:   1280px !default;
+$se-bp-2xl:  1536px !default;
+
+
+// ── Z-Index Layers ──────────────────────────────────────────────
+
+$se-z-behind:      -1 !default;
+$se-z-base:         0 !default;
+$se-z-above:        1 !default;
+$se-z-sticky:       100 !default;
+$se-z-navbar:       1000 !default;
+$se-z-overlay:      2000 !default;
+$se-z-modal:        3000 !default;
+$se-z-toast:        4000 !default;
+
+
+// ── Transitions ─────────────────────────────────────────────────
+
+$se-duration-fast:     150ms !default;
+$se-duration-normal:   300ms !default;
+$se-duration-slow:     500ms !default;
+$se-duration-slower:   800ms !default;
+
+$se-ease-default:      cubic-bezier(0.4, 0, 0.2, 1) !default;
+$se-ease-in:           cubic-bezier(0.4, 0, 1, 1) !default;
+$se-ease-out:          cubic-bezier(0, 0, 0.2, 1) !default;
+$se-ease-in-out:       cubic-bezier(0.4, 0, 0.2, 1) !default;
+$se-ease-bounce:       cubic-bezier(0.34, 1.56, 0.64, 1) !default;
+
+
+// ── Glassmorphism Blur ──────────────────────────────────────────
+
+$se-blur-sm:       8px !default;
+$se-blur-md:       16px !default;
+$se-blur-lg:       24px !default;
+$se-blur-xl:       40px !default;
+
+
+// ── CSS Custom Properties (runtime access) ──────────────────────
+
+:root {
+    // Colors
+    --se-bg-primary:       #{$se-bg-primary};
+    --se-bg-secondary:     #{$se-bg-secondary};
+    --se-bg-tertiary:      #{$se-bg-tertiary};
+    --se-accent-primary:   #{$se-accent-primary};
+    --se-accent-secondary: #{$se-accent-secondary};
+    --se-accent-light:     #{$se-accent-light};
+    --se-text-primary:     #{$se-text-primary};
+    --se-text-secondary:   #{$se-text-secondary};
+    --se-text-muted:       #{$se-text-muted};
+
+    // Glass
+    --se-glass-bg:         #{$se-glass-bg};
+    --se-glass-border:     #{$se-glass-border};
+
+    // Typography
+    --se-font-primary:     #{$se-font-primary};
+    --se-font-display:     #{$se-font-display};
+
+    // Transitions
+    --se-duration-fast:    #{$se-duration-fast};
+    --se-duration-normal:  #{$se-duration-normal};
+    --se-duration-slow:    #{$se-duration-slow};
+}

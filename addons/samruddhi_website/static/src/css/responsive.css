@@ -1,0 +1,118 @@
+/* ═══════════════════════════════════════════════════════════════════
+ * Samruddhi Eco System — Responsive Breakpoints
+ * ═══════════════════════════════════════════════════════════════════
+ *
+ * Mobile-first responsive overrides.
+ * Breakpoints: sm 480px | md 768px | lg 1024px | xl 1280px | 2xl 1536px
+ *
+ * Consumes design tokens from variables.css.
+ * Loaded after style.css in the asset pipeline.
+ * ═══════════════════════════════════════════════════════════════════ */
+
+
+/* ── Small (≥ 480px) ─────────────────────────────────────────────── */
+
+@media (min-width: 480px) {
+
+    /* Placeholder — small device overrides */
+
+}
+
+
+/* ── Medium (≥ 768px) ────────────────────────────────────────────── */
+
+@media (min-width: 768px) {
+
+    /* Placeholder — tablet overrides */
+
+}
+
+
+/* ── Large (≥ 1024px) ────────────────────────────────────────────── */
+
+@media (min-width: 1024px) {
+
+    #wrapwrap .se-page .se-container {
+        padding-left: var(--se-space-8);
+        padding-right: var(--se-space-8);
+    }
+
+    /* Placeholder — desktop overrides */
+
+}
+
+
+/* ── Extra Large (≥ 1280px) ──────────────────────────────────────── */
+
+@media (min-width: 1280px) {
+
+    /* Placeholder — wide desktop overrides */
+
+}
+
+
+/* ── 2X Large (≥ 1536px) ─────────────────────────────────────────── */
+
+@media (min-width: 1536px) {
+
+    /* Placeholder — ultra-wide overrides */
+
+}
+
+
+/* ── Max-width: Small (≤ 480px) ──────────────────────────────────── */
+
+@media (max-width: 480px) {
+
+    #wrapwrap .se-page section {
+        padding-top: var(--se-space-12);
+        padding-bottom: var(--se-space-12);
+    }
+
+    /* Placeholder — mobile-only overrides */
+
+}
+
+
+/* ── Max-width: Medium (≤ 768px) ─────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+    #wrapwrap .se-page section {
+        padding-top: var(--se-space-16);
+        padding-bottom: var(--se-space-16);
+    }
+
+    /* Placeholder — mobile/tablet-only overrides */
+
+}
+
+
+/* ── Reduced Motion ──────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+}
+
+
+/* ── High Contrast ───────────────────────────────────────────────── */
+
+@media (prefers-contrast: high) {
+
+    :root {
+        --se-text-primary:      #ffffff;
+        --se-text-secondary:    #cccccc;
+        --se-glass-border:      rgba(255, 255, 255, 0.3);
+        --se-border-subtle:     rgba(255, 255, 255, 0.2);
+    }
+
+}

@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         Samruddhi Eco System — Homepage
+         ════════════════════════════════════════════════════════════════
+
+         Semantic HTML5 placeholders for all homepage sections.
+         No inline CSS. No inline JavaScript. No styling classes.
+         All visual design is handled by SCSS assets.
+
+         Sections (9):
+           1. #se-hero           — Hero / banner
+           2. #se-about          — About / vision
+           3. #se-ecosystem      — Ecosystem pillars
+           4. #se-membership     — Membership tiers
+           5. #se-projects       — Community projects
+           6. #se-gallery        — Photo / media gallery
+           7. #se-testimonials   — Member testimonials
+           8. #se-statistics     — Key numbers / stats
+           9. #se-contact        — Contact / call-to-action
+         ════════════════════════════════════════════════════════════════ -->
+
+    <template id="homepage" name="Samruddhi Eco System — Home">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Samruddhi Eco System</t>
+
+            <main id="se-wrap" t-attf-class="se-page #{page_class}"
+                  role="main" itemscope=""
+                  itemtype="http://schema.org/WebPage">
+
+
+                <!-- ══════════════════════════════════════════════
+                     1. HERO
+                     ══════════════════════════════════════════════ -->
+
+                <section id="se-hero" aria-label="Hero banner">
+                    <div class="se-container">
+
+                        <!-- Overline label -->
+                        <p>Welcome to</p>
+
+                        <!-- Primary heading (single h1 per page) -->
+                        <h1>
+                            Samruddhi
+                            <span>Eco System</span>
+                        </h1>
+
+                        <!-- Tagline -->
+                        <p>
+                            Building a thriving community where lifestyle meets legacy.
+                            A premium ecosystem designed for the extraordinary.
+                        </p>
+
+                        <!-- Call-to-action links -->
+                        <nav aria-label="Hero actions">
+                            <a href="#se-ecosystem">Explore Ecosystem</a>
+                            <a href="/about">Learn More</a>
+                        </nav>
+
+                    </div>
+                </section>
+
+
+                <!-- ══════════════════════════════════════════════
+                     2. ABOUT
+                     ══════════════════════════════════════════════ -->
+
+                <section id="se-about" aria-labelledby="se-about-title">
+                    <div class="se-container">
+
+                        <header>
+                            <p>Our Vision</p>
+                            <h2 id="se-about-title">A Legacy of Excellence</h2>
+                            <p>
+                                Samruddhi Eco System is more than a community — it is
+                                an experience sculpted for those who value refinement,
+                                growth, and meaningful connections.
+                            </p>
+                        </header>
+
+                        <!-- Feature cards -->
+                        <ul>
+                            <li>
+                                <h3>Premium Living</h3>
+                                <p>
+                                    Curated spaces and amenities designed to elevate
+                                    everyday living into an art form.
+                                </p>
+                            </li>
+                            <li>
+                                <h3>Vibrant Community</h3>
+                                <p>
+                                    A network of like-minded individuals united by
+                                    shared values and a passion for growth.
+                                </p>
+                            </li>
+                            <li>
+                                <h3>Sustainable Future</h3>
+                                <p>
+                                    Committed to ecological harmony, blending modern
+                                    luxury with environmental responsibility.
+                                </p>
+                            </li>
+                        </ul>
+
+                    </div>
+                </section>
+
+
+                <!-- ══════════════════════════════════════════════
+                     3. ECOSYSTEM
+                     ══════════════════════════════════════════════ -->
+
+                <section id="se-ecosystem" aria-labelledby="se-ecosystem-title">
+                    <div class="se-container">
+
+                        <header>
+                            <p>The Ecosystem</p>
+                            <h2 id="se-ecosystem-title">Four Pillars of Samruddhi</h2>
+                        </header>
+
+                        <!-- Pillar cards -->
+                        <ol>
+                            <li>
+                                <h3>Club &amp; Lifestyle</h3>
+                                <p>
+                                    An exclusive members-only club offering world-class
+                                    recreational facilities, events, and social gatherings.
+                                </p>
+                            </li>
+                            <li>
+                                <h3>Wellness &amp; Health</h3>
+                                <p>
+                                    Holistic wellness programs, state-of-the-art fitness
+                                    centers, and curated health experiences.
+                                </p>
+                            </li>
+                            <li>
+                                <h3>Education &amp; Growth</h3>
+                                <p>
+                                    Learning initiatives, mentorship programs, and
+                                    knowledge-sharing platforms for all ages.
+                                </p>
+                            </li>
+                            <li>
+                                <h3>Nature &amp; Ecology</h3>
+                                <p>
+                                    Green spaces, eco-conscious design, and initiatives
+                                    that nurture our relationship with nature.
+                                </p>
+                            </li>
+                        </ol>
+
+                    </div>
+                </section>
+
+
+                <!-- ══════════════════════════════════════════════
+                     4. MEMBERSHIP
+                     ══════════════════════════════════════════════ -->
+
+                <section id="se-membership" aria-labelledby="se-membership-title">
+                    <div class="se-container">
+
+                        <header>
+                            <p>Membership</p>
+                            <h2 id="se-membership-title">Join the Samruddhi Family</h2>
+                            <p>
+                                Exclusive membership tiers designed to match your
+                                lifestyle aspirations and community goals.
+                            </p>
+                        </header>
+
+                        <!-- Membership tier cards -->
+                        <ul>
+                            <li>
+                                <h3>Silver</h3>
+                                <p>Access to core club amenities and community events.</p>
+                            </li>
+                            <li>
+                                <h3>Gold</h3>
+                                <p>Enhanced privileges with priority bookings and premium facilities.</p>
+                            </li>
+                            <li>
+                                <h3>Platinum</h3>
+                                <p>The complete Samruddhi experience with all-access benefits.</p>
+                            </li>
+                        </ul>
+
+                        <a href="/membership">View All Tiers</a>
+
+                    </div>
+                </section>
+
+
+                <!-- ══════════════════════════════════════════════
+                     5. PROJECTS
+                     ══════════════════════════════════════════════ -->
+
+                <section id="se-projects" aria-labelledby="se-projects-title">
+                    <div class="se-container">
+
+                        <header>
+                            <p>Our Projects</p>
+                            <h2 id="se-projects-title">Building the Future Together</h2>
+                            <p>
+                                A showcase of initiatives and developments shaping
+                                the Samruddhi Eco System.
+                            </p>
+                        </header>
+
+                        <!-- Project cards placeholder -->
+                        <ul>
+                            <li>
+                                <h3>Community Park</h3>
+                                <p>A 10-acre landscaped green space for recreation and relaxation.</p>
+                                <span>In Progress</span>
+                            </li>
+                            <li>
+                                <h3>Sports Complex</h3>
+                                <p>Multi-sport facility with indoor and outdoor arenas.</p>
+                                <span>Planned</span>
+                            </li>
+                            <li>
+                                <h3>Cultural Center</h3>
+                                <p>A hub for arts, performances, and community celebrations.</p>
+                                <span>Completed</span>
+                            </li>
+                        </ul>
+
+                        <a href="/projects">Explore All Projects</a>
+
+                    </div>
+                </section>
+
+
+                <!-- ══════════════════════════════════════════════
+                     6. GALLERY
+                     ══════════════════════════════════════════════ -->
+
+                <section id="se-gallery" aria-labelledby="se-gallery-title">
+                    <div class="se-container">
+
+                        <header>
+                            <p>Gallery</p>
+                            <h2 id="se-gallery-title">Life at Samruddhi</h2>
+                            <p>
+                                Moments captured across events, facilities,
+                                and everyday community life.
+                            </p>
+                        </header>
+
+                        <!-- Gallery grid placeholder -->
+                        <figure>
+                            <img alt="Gallery image 1 placeholder"
+                                 src="" loading="lazy" width="400" height="300"/>
+                            <figcaption>Community event</figcaption>
+                        </figure>
+                        <figure>
+                            <img alt="Gallery image 2 placeholder"
+                                 src="" loading="lazy" width="400" height="300"/>
+                            <figcaption>Club facilities</figcaption>
+                        </figure>
+                        <figure>
+                            <img alt="Gallery image 3 placeholder"
+                                 src="" loading="lazy" width="400" height="300"/>
+                            <figcaption>Green spaces</figcaption>
+                        </figure>
+                        <figure>
+                            <img alt="Gallery image 4 placeholder"
+                                 src="" loading="lazy" width="400" height="300"/>
+                            <figcaption>Wellness programs</figcaption>
+                        </figure>
+                        <figure>
+                            <img alt="Gallery image 5 placeholder"
+                                 src="" loading="lazy" width="400" height="300"/>
+                            <figcaption>Cultural events</figcaption>
+                        </figure>
+                        <figure>
+                            <img alt="Gallery image 6 placeholder"
+                                 src="" loading="lazy" width="400" height="300"/>
+                            <figcaption>Sports activities</figcaption>
+                        </figure>
+
+                    </div>
+                </section>
+
+
+                <!-- ══════════════════════════════════════════════
+                     7. TESTIMONIALS
+                     ══════════════════════════════════════════════ -->
+
+                <section id="se-testimonials" aria-labelledby="se-testimonials-title">
+                    <div class="se-container">
+
+                        <header>
+                            <p>Testimonials</p>
+                            <h2 id="se-testimonials-title">What Our Members Say</h2>
+                        </header>
+
+                        <!-- Testimonial cards -->
+                        <blockquote>
+                            <p>
+                                Samruddhi has transformed the way our family experiences
+                                community living. It truly feels like home.
+                            </p>
+                            <footer>
+                                <cite>— Member Family, Since 2018</cite>
+                            </footer>
+                        </blockquote>
+
+                        <blockquote>
+                            <p>
+                                The wellness programs and green spaces have made a
+                                remarkable difference in our daily lives.
+                            </p>
+                            <footer>
+                                <cite>— Member Family, Since 2020</cite>
+                            </footer>
+                        </blockquote>
+
+                        <blockquote>
+                            <p>
+                                Being part of this ecosystem means being part of
+                                something bigger — a legacy we are building together.
+                            </p>
+                            <footer>
+                                <cite>— Member Family, Since 2016</cite>
+                            </footer>
+                        </blockquote>
+
+                    </div>
+                </section>
+
+
+                <!-- ══════════════════════════════════════════════
+                     8. STATISTICS
+                     ══════════════════════════════════════════════ -->
+
+                <section id="se-statistics" aria-labelledby="se-statistics-title">
+                    <div class="se-container">
+
+                        <h2 id="se-statistics-title" class="visually-hidden">
+                            Key Statistics
+                        </h2>
+
+                        <dl>
+                            <div>
+                                <dt>Member Families</dt>
+                                <dd>500+</dd>
+                            </div>
+                            <div>
+                                <dt>Acres of Greenery</dt>
+                                <dd>50+</dd>
+                            </div>
+                            <div>
+                                <dt>Premium Amenities</dt>
+                                <dd>25+</dd>
+                            </div>
+                            <div>
+                                <dt>Years of Legacy</dt>
+                                <dd>10+</dd>
+                            </div>
+                        </dl>
+
+                    </div>
+                </section>
+
+
+                <!-- ══════════════════════════════════════════════
+                     9. CONTACT
+                     ══════════════════════════════════════════════ -->
+
+                <section id="se-contact" aria-labelledby="se-contact-title">
+                    <div class="se-container">
+
+                        <header>
+                            <h2 id="se-contact-title">
+                                Ready to be part of something extraordinary?
+                            </h2>
+                            <p>
+                                Join the Samruddhi Eco System and experience a
+                                lifestyle that transcends the ordinary.
+                            </p>
+                        </header>
+
+                        <a href="/contact">Get in Touch</a>
+
+                    </div>
+                </section>
+
+
+            </main>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,162 @@
+/* ═══════════════════════════════════════════════════════════════════
+ * Samruddhi Frontend — Responsive Architecture
+ * ═══════════════════════════════════════════════════════════════════
+ * 
+ * Mobile-first media queries.
+ * Exclusively using CSS Grid and Flexbox for layout control.
+ * 
+ * Breakpoints supported:
+ * 320px  — Minimum mobile (SE/Fold)
+ * 375px  — Standard mobile
+ * 768px  — Tablet
+ * 1024px — Small Desktop / Landscape Tablet
+ * 1440px — Large Desktop
+ * 1920px — Ultra-wide Display
+ * ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Universal Layout Utilities ────────────────────────────────── */
+
+#wrapwrap .sf-page .sf-flex {
+    display: flex;
+}
+
+#wrapwrap .sf-page .sf-grid {
+    display: grid;
+}
+
+/* ── Base (Mobile First: < 320px up to 374px) ──────────────────── */
+#wrapwrap .sf-page .sf-container {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: var(--sf-space-4);
+    padding-right: var(--sf-space-4);
+}
+
+#wrapwrap .sf-page .sf-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sf-space-4);
+}
+
+#wrapwrap .sf-page .sf-flex-layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sf-space-4);
+}
+
+/* Base Typography Scaling for extreme mobile */
+#wrapwrap .sf-page h1 { font-size: var(--sf-text-3xl); }
+#wrapwrap .sf-page h2 { font-size: var(--sf-text-2xl); }
+#wrapwrap .sf-page h3 { font-size: var(--sf-text-xl); }
+
+
+/* ── Standard Mobile (≥ 375px) ─────────────────────────────────── */
+@media (min-width: 375px) {
+    #wrapwrap .sf-page .sf-container {
+        padding-left: var(--sf-space-6);
+        padding-right: var(--sf-space-6);
+    }
+    
+    #wrapwrap .sf-page h1 { font-size: var(--sf-text-4xl); }
+}
+
+
+/* ── Tablet (≥ 768px) ──────────────────────────────────────────── */
+@media (min-width: 768px) {
+    #wrapwrap .sf-page .sf-container {
+        padding-left: var(--sf-space-8);
+        padding-right: var(--sf-space-8);
+        max-width: var(--sf-container-md);
+    }
+
+    /* Convert stacks to 2-column grids */
+    #wrapwrap .sf-page .sf-grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--sf-space-6);
+    }
+
+    #wrapwrap .sf-page .sf-flex-layout {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #wrapwrap .sf-page h1 { font-size: var(--sf-text-5xl); }
+    #wrapwrap .sf-page h2 { font-size: var(--sf-text-3xl); }
+}
+
+
+/* ── Desktop (≥ 1024px) ────────────────────────────────────────── */
+@media (min-width: 1024px) {
+    #wrapwrap .sf-page .sf-container {
+        padding-left: var(--sf-container-padding);
+        padding-right: var(--sf-container-padding);
+        max-width: var(--sf-container-lg);
+    }
+
+    /* Expand grids for desktop */
+    #wrapwrap .sf-page .sf-grid-layout {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--sf-space-8);
+    }
+    
+    /* Dedicated 4-col grid helper */
+    #wrapwrap .sf-page .sf-grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--sf-space-8);
+    }
+
+    /* Asymmetric Hero/Feature layouts */
+    #wrapwrap .sf-page .sf-grid-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--sf-space-12);
+        align-items: center;
+    }
+
+    #wrapwrap .sf-page h1 { font-size: var(--sf-text-6xl); }
+}
+
+
+/* ── Large Desktop (≥ 1440px) ──────────────────────────────────── */
+@media (min-width: 1440px) {
+    #wrapwrap .sf-page .sf-container {
+        max-width: var(--sf-container-2xl);
+    }
+
+    #wrapwrap .sf-page .sf-grid-layout {
+        gap: var(--sf-space-12);
+    }
+}
+
+
+/* ── Ultra-Wide (≥ 1920px) ─────────────────────────────────────── */
+@media (min-width: 1920px) {
+    #wrapwrap .sf-page .sf-container {
+        max-width: var(--sf-container-3xl);
+    }
+
+    /* Scale up typography for massive screens */
+    #wrapwrap .sf-page h1 { font-size: calc(var(--sf-text-6xl) * 1.2); }
+    #wrapwrap .sf-page h2 { font-size: calc(var(--sf-text-4xl) * 1.2); }
+    
+    /* Increase spacing proportionally */
+    #wrapwrap .sf-page .sf-grid-layout,
+    #wrapwrap .sf-page .sf-grid-split {
+        gap: var(--sf-space-16);
+    }
+}
+
+
+/* ── Accessibility: Reduced Motion ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    #wrapwrap .sf-page *,
+    #wrapwrap .sf-page *::before,
+    #wrapwrap .sf-page *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

@@ -1,0 +1,133 @@
+// ═══════════════════════════════════════════════════════════════════
+// Samruddhi Eco System — Utility Classes
+// ═══════════════════════════════════════════════════════════════════
+
+
+#wrapwrap .se-page {
+
+    // ── Accessibility ───────────────────────────────────────────
+
+    .visually-hidden {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+    }
+
+
+    // ── Glass Card Utility ──────────────────────────────────────
+
+    .glass-card {
+        background: $se-glass-bg;
+        backdrop-filter: blur($se-blur-md);
+        -webkit-backdrop-filter: blur($se-blur-md);
+        border: 1px solid $se-glass-border;
+        border-radius: $se-radius-lg;
+    }
+
+
+    // ── Divider ─────────────────────────────────────────────────
+
+    .se-divider {
+        width: 100%;
+        height: 1px;
+        background: $se-border-subtle;
+        border: none;
+        margin: $se-space-8 0;
+    }
+
+    .se-divider--gold {
+        background: $se-gradient-gold;
+        height: 2px;
+    }
+
+
+    // ── Animation-Ready States (no animation yet) ───────────────
+    // These classes define the "before animation" state.
+    // Future GSAP integration will animate FROM these states.
+
+    .fade-in-ready {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    .fade-in-ready--left {
+        opacity: 0;
+        transform: translateX(-24px);
+    }
+
+    .fade-in-ready--right {
+        opacity: 0;
+        transform: translateX(24px);
+    }
+
+    .fade-in-ready--scale {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    // Active/visible state (applied by IntersectionObserver or GSAP)
+    .is-visible {
+        opacity: 1;
+        transform: translate(0) scale(1);
+    }
+
+
+    // ── Spacing Utilities ───────────────────────────────────────
+
+    .se-mt-0  { margin-top: 0 !important; }
+    .se-mt-4  { margin-top: $se-space-4 !important; }
+    .se-mt-8  { margin-top: $se-space-8 !important; }
+    .se-mt-12 { margin-top: $se-space-12 !important; }
+    .se-mt-16 { margin-top: $se-space-16 !important; }
+
+    .se-mb-0  { margin-bottom: 0 !important; }
+    .se-mb-4  { margin-bottom: $se-space-4 !important; }
+    .se-mb-8  { margin-bottom: $se-space-8 !important; }
+    .se-mb-12 { margin-bottom: $se-space-12 !important; }
+    .se-mb-16 { margin-bottom: $se-space-16 !important; }
+
+    .se-pt-0  { padding-top: 0 !important; }
+    .se-pb-0  { padding-bottom: 0 !important; }
+
+
+    // ── Text Utilities ──────────────────────────────────────────
+
+    .se-text-center  { text-align: center; }
+    .se-text-left    { text-align: left; }
+    .se-text-right   { text-align: right; }
+
+    .se-text-accent  { color: $se-accent-primary; }
+    .se-text-muted   { color: $se-text-muted; }
+    .se-text-white   { color: $se-text-primary; }
+
+
+    // ── Display Utilities ───────────────────────────────────────
+
+    .se-hidden       { display: none !important; }
+
+    .se-hidden--sm {
+        @media (max-width: $se-bp-sm) {
+            display: none !important;
+        }
+    }
+
+    .se-hidden--md {
+        @media (max-width: $se-bp-md) {
+            display: none !important;
+        }
+    }
+
+    .se-visible--md {
+        display: none !important;
+
+        @media (max-width: $se-bp-md) {
+            display: block !important;
+        }
+    }
+}
